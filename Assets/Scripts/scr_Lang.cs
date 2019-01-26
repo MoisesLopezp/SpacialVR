@@ -11,7 +11,7 @@ public class scr_Lang {
     {
         language = "English";
 
-        if (scr_Config.Op_Leng == 1)
+        if (scr_Menu.Op_Leng == 1)
         {
             language = "Spanish";
         }

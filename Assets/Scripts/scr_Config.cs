@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 
-public class scr_Config : MonoBehaviour {
+namespace SaveGameFree
+{
+    [Serializable]
+    public class scr_Config
+    {
 
-    public static int Op_Leng = 1;
+        public int Op_Leng = 1;
+        public bool Op_360 = false;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-
+    }
 }
