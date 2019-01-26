@@ -70,6 +70,11 @@ public class scr_PlayerStats : MonoBehaviour {
         }
     }
 
+    public void Add_ProbWin(float _plus)
+    {
+        scr_Mng.GM.Add_ProbWin(_plus);
+    }
+
     public void Add_Mass()
     {
 
@@ -80,6 +85,7 @@ public class scr_PlayerStats : MonoBehaviour {
         if (IsDeath)
             return;
         IsDeath = true;
+        scr_Mng.GM.GoGameOver();
     }
 
     // Use this for initialization
