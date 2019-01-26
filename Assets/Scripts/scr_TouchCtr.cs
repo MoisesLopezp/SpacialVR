@@ -19,12 +19,17 @@ public class scr_TouchCtr : MonoBehaviour {
     OVRInput.Axis1D GrabButton;
     OVRInput.Axis1D AcctionButton;
 
+    OVRInput.Axis2D Move;
+
     bool IsRight = true;
+
+    Rigidbody PlayerRB;
 
 	// Use this for initialization
 	void Start () {
         ObjectGrab = null;
         PosibleObjectGrab = null;
+        PlayerRB = GetComponent<Rigidbody>();
 
         Hand = AnimatorHand.gameObject;
         if (MyController == OVRInput.Controller.RTouch)
@@ -32,11 +37,13 @@ public class scr_TouchCtr : MonoBehaviour {
             IsRight = true;
             GrabButton = OVRInput.Axis1D.SecondaryHandTrigger;
             AcctionButton = OVRInput.Axis1D.SecondaryIndexTrigger;
+            Move = OVRInput.Axis2D.SecondaryThumbstick;
         } else
         {
             IsRight = false;
             GrabButton = OVRInput.Axis1D.PrimaryHandTrigger;
             AcctionButton = OVRInput.Axis1D.PrimaryIndexTrigger;
+            Move = OVRInput.Axis2D.PrimaryThumbstick;
         }
     }
 
@@ -93,6 +100,16 @@ public class scr_TouchCtr : MonoBehaviour {
             }
         }
         */
+
+        if (OVRInput.Get(OVRInput.Button.One))
+        {
+            PlayerRB.AddForce(Player.transform.up, ForceMode.Acceleration);
+        }
+
+        if (OVRInput.Get(OVRInput.Button.One))
+        {
+            PlayerRB.AddForce(Player.transform.up*-1, ForceMode.Acceleration);
+        }
 
         if (!PosibleObjectGrab)
             AnimatorHand.SetBool("Interact", false);
