@@ -67,7 +67,6 @@ public class scr_TouchCtr : MonoBehaviour {
                 ObjectGrab = PosibleObjectGrab;
                 ObjectGrab.transform.position = Hand.transform.position;
                 ObjectGrab.transform.rotation = Hand.transform.rotation;
-                ObjectGrab.transform.parent = transform;
                 ObjectGrab.GetComponent<Rigidbody>().useGravity = false;
                 ObjectGrab.transform.SetParent(Hand.transform);
                 if (ObjectGrab.GetComponent<SphereCollider>())
@@ -82,7 +81,6 @@ public class scr_TouchCtr : MonoBehaviour {
             {
                 ObjectGrab.GetComponent<Rigidbody>().useGravity = true;
                 ObjectGrab.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(MyController);
-                ObjectGrab.transform.parent = null;
                 if (ObjectGrab.GetComponent<SphereCollider>())
                     ObjectGrab.GetComponent<SphereCollider>().enabled = true;
                 if (ObjectGrab.GetComponent<BoxCollider>())
@@ -90,18 +88,18 @@ public class scr_TouchCtr : MonoBehaviour {
                 ObjectGrab = null;
             }
         }
-        /*
+        
         if (ObjectGrab)
         {
             ObjectGrab.transform.position = Hand.transform.position;
             ObjectGrab.transform.rotation = Hand.transform.rotation;
+            ObjectGrab.GetComponent<Rigidbody>().velocity = Vector3.zero;
             if (OVRInput.Get(AcctionButton)>0.5)
             {
                 ObjectGrab.SendMessage("Touch_Acction");
             }
         }
-        */
-
+        
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
             PlayerRB.AddForce(Player.transform.up*8f);
