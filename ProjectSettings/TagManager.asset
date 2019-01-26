@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - CanGrab
-  - Item
   - KillZone
+  - Dmg
+  - Explo
   layers:
   - Default
   - TransparentFX
