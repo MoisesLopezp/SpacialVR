@@ -93,6 +93,7 @@ public class scr_TouchCtr : MonoBehaviour {
             }
         }
         */
+
         if (!PosibleObjectGrab)
             AnimatorHand.SetBool("Interact", false);
         else
