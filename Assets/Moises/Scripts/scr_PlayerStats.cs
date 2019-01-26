@@ -46,7 +46,8 @@ public class scr_PlayerStats : MonoBehaviour {
     public void Add_Food(float _plus)
     {
         St_Food += _plus;
-        if (St_Food > 100f) { St_Food = 100f; }
+        if (St_Food > 200f) { St_Food = 200f; }
+        if (St_Food > 100f) { Add_Mass(); }
     }
 
     public void Rest_Food(float _val)
@@ -67,6 +68,11 @@ public class scr_PlayerStats : MonoBehaviour {
             St_Health = 0f;
             Die();
         }
+    }
+
+    public void Add_Mass()
+    {
+
     }
 
     public void Die()
