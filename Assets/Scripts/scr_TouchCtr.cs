@@ -6,6 +6,8 @@ public class scr_TouchCtr : MonoBehaviour {
 
     public OVRInput.Controller MyController;
     public Animator AnimatorHand;
+    public GameObject Player;
+
     GameObject Hand;
 
     [HideInInspector]
@@ -13,8 +15,6 @@ public class scr_TouchCtr : MonoBehaviour {
 
     [HideInInspector]
     public GameObject PosibleObjectGrab;
-
-    public GameObject Player;
 
     OVRInput.Axis1D GrabButton;
     OVRInput.Axis1D AcctionButton;
@@ -48,7 +48,8 @@ public class scr_TouchCtr : MonoBehaviour {
         Quaternion HandQ = OVRInput.GetLocalControllerRotation(MyController);
 
         transform.localPosition = OVRInput.GetLocalControllerPosition(MyController)+new Vector3(0f,0.6f,0f);
-        transform.rotation =  Quaternion.Euler(HandQ.eulerAngles.x, HandQ.eulerAngles.y, HandQ.eulerAngles.z);
+        transform.rotation = OVRInput.GetLocalControllerRotation(MyController);
+            //Quaternion.Euler(HandQ.eulerAngles.x, HandQ.eulerAngles.y, HandQ.eulerAngles.z);
 
         if (OVRInput.Get(GrabButton)>0.5)
         {
@@ -56,8 +57,9 @@ public class scr_TouchCtr : MonoBehaviour {
             if (PosibleObjectGrab && !ObjectGrab)
             {
                 ObjectGrab = PosibleObjectGrab;
-                ObjectGrab.transform.position = Vector3.zero;
-                ObjectGrab.transform.rotation = Quaternion.identity;
+                ObjectGrab.transform.position = Hand.transform.position;
+                ObjectGrab.transform.rotation = Hand.transform.rotation;
+                ObjectGrab.transform.parent = transform;
                 ObjectGrab.GetComponent<Rigidbody>().useGravity = false;
                 ObjectGrab.transform.SetParent(Hand.transform);
                 if (ObjectGrab.GetComponent<SphereCollider>())
@@ -80,7 +82,7 @@ public class scr_TouchCtr : MonoBehaviour {
                 ObjectGrab = null;
             }
         }
-
+        /*
         if (ObjectGrab)
         {
             ObjectGrab.transform.position = Hand.transform.position;
@@ -90,7 +92,7 @@ public class scr_TouchCtr : MonoBehaviour {
                 ObjectGrab.SendMessage("Touch_Acction");
             }
         }
-
+        */
         if (!PosibleObjectGrab)
             AnimatorHand.SetBool("Interact", false);
         else
