@@ -78,11 +78,10 @@ public class scr_Items : MonoBehaviour {
 	void Update () {
         if (tipoObj != 3 && tipoObj != 5 && tipoObj != 1)
         {
-            ui_Image.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
-            ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);
+            /*ui_Image.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
+            ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);*/
         }
         
-
         if (tipoObj == 4)
         {
             Dinamita();
@@ -91,7 +90,12 @@ public class scr_Items : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player" )
+        if (tipoObj == 4)
+        {
+            detonante = true;
+        }
+
+        if (collision.gameObject.tag == "Player" )
         {
             switch (tipoObj)
             {
@@ -113,13 +117,20 @@ public class scr_Items : MonoBehaviour {
                     break;
                 default:
                     break;
-            }       
-                       
+            }
+
         }
+       
+           
+       
     }
 
     private void OnTriggerStay(Collider other)
     {
+        /*if (tipoObj == 4)
+        {
+            detonante = true;
+        }*/
         if(other.gameObject.tag == "Player" )
         {
             switch (tipoObj)
@@ -205,7 +216,6 @@ public class scr_Items : MonoBehaviour {
             {
                 Vector3 dirActual = (this.transform.position - player.transform.position);
                 magnitud = dirActual.magnitude;            
-
                
                 //Debug.DrawLine(transform.position, transform.forward, Color.red); print("Hit");
             }
