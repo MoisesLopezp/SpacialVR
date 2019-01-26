@@ -20,13 +20,12 @@ public class scr_Items : MonoBehaviour {
     */
 
     public float fuerzaini = 1.0f;
-    public float damage = 0;
+    public float inc_dec_Valor = 0;
     float magnitud;
 
 
     public int tipoObj;
-    public int tipoobjeto, dmg = 10;
-
+   
     public bool detonante = false; // para que explote y haga daño se necesita cambiar el bool a true
     bool multiplicador = false;
     bool hoyonegro = false;
@@ -47,7 +46,7 @@ public class scr_Items : MonoBehaviour {
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_PlayerStats>();            
         
-        switch (tipoobjeto)
+        switch (tipoObj)
         {
             case 1://es meteoro
                 Vector3 Direccion = (Jugador.transform.position - this.transform.position).normalized;
@@ -81,18 +80,18 @@ public class scr_Items : MonoBehaviour {
             switch (tipoObj)
             {
                 case 1:
-                    PlayerScript.Add_Dmg(damage);
+                    PlayerScript.Add_Dmg(inc_dec_Valor);
                     ComunScript.RecibiDanio = true;
                     break;
                 case 2:
-                    PlayerScript.Add_Dmg(damage);
+                    PlayerScript.Add_Dmg(inc_dec_Valor);
                     ComunScript.RecibiDanio = true;
                     Destroy(this.gameObject);
                     break;
                
                 case 4:
-                    damage -= magnitud;                   
-                    PlayerScript.Add_Dmg(damage);
+                    inc_dec_Valor -= magnitud;                   
+                    PlayerScript.Add_Dmg(inc_dec_Valor);
                     ComunScript.RecibiDanio = true;
                     break;
                 default:
@@ -109,7 +108,7 @@ public class scr_Items : MonoBehaviour {
             switch (tipoObj)
             {
                 case 3:
-                    PlayerScript.Add_Dmg(damage);
+                    PlayerScript.Add_Dmg(inc_dec_Valor);
                     ComunScript.RecibiDanio = true;
                     break;
                 case 5:
@@ -134,13 +133,16 @@ public class scr_Items : MonoBehaviour {
         {
             switch (tipoObj)
             {
+                case 6:
+                    MiniGame_BombaAire();
+                    break;
                 case 7:
-                    PlayerScript.Add_Happiness(damage);
+                    PlayerScript.Add_Happiness(inc_dec_Valor);
                     ComunScript.Play_Audio();
                     Destroy(this.gameObject);
                     break;
                 case 9:
-                    PlayerScript.Add_Food(damage);
+                    PlayerScript.Add_Food(inc_dec_Valor);
                     ComunScript.Play_Audio();
                     Destroy(this.gameObject);
                     break;
@@ -192,4 +194,10 @@ public class scr_Items : MonoBehaviour {
             }
         }
     }
+    
+    void MiniGame_BombaAire()
+    {
+        PlayerScript.Add_Air(inc_dec_Valor);
+    }
+
 }
