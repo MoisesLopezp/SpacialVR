@@ -8,6 +8,8 @@ public class SCR_HazardSpawner : MonoBehaviour
     public float SpawnDistance;
     //Rny: arreglo con los objetos que dañan al jugador
     public GameObject[] hazards;
+    //Rny: El objeto padre de todos los objetos que se creen
+    public Transform hazardsParent;
 
     private void Start()
     {
@@ -20,12 +22,13 @@ public class SCR_HazardSpawner : MonoBehaviour
     public void SpawnObject(SCR_SpaceManager.HAZARDS _hazardIndex, float _deathTime)
     {
         //Rny: Se setea la posicion random en la cual se spawnea el objeto asegurandonos que siempre esten a la misma distancia
-        float posZ = 30 - Random.Range(0.0f, SpawnDistance);
-        float posX = 30 - Random.Range(-SpawnDistance + Mathf.Abs(posZ), SpawnDistance - Mathf.Abs(posZ));
-        float posY = 30 - Random.Range(-SpawnDistance + Mathf.Abs(posX) + Mathf.Abs(posZ), SpawnDistance - Mathf.Abs(posX) - Mathf.Abs(posZ));
+        float posX = Random.Range(-SpawnDistance, SpawnDistance);
+        float posY = Random.Range(-SpawnDistance + Mathf.Abs(posX), SpawnDistance - Mathf.Abs(posX));
+        float posZ = (SpawnDistance - (Mathf.Abs(posX) + Mathf.Abs(posY)));
 
         //Rny: Se spawnea el objeto en la posicion asignada
         GameObject myHazard = Instantiate(hazards[(int)_hazardIndex], new Vector3(posX, posY, posZ), Quaternion.identity);
+        myHazard.transform.parent = hazardsParent;
         StartCoroutine(ObjectKiller(myHazard, _deathTime));
         Debug.Log("Spawning " + myHazard.name + " at " + new Vector3(posX, posY, posZ));
     }

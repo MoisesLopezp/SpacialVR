@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class scr_PlayerStats : MonoBehaviour {
 
     public float St_Air = 100f;
