@@ -67,7 +67,6 @@ public class scr_Items : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-
         if(tipoObj == 4)
         {
             Dinamita();
