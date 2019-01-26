@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(SCR_HazardSpawner))]
 public class SCR_SpaceManager : MonoBehaviour
 {
     public enum HAZARDS
