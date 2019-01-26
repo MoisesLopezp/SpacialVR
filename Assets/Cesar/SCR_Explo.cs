@@ -1,27 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
+public class C_Itemsss
+{
+    public GameObject v_Modelo;
+    [Range(1, 10)]
+    public int v_Cuantos = 1;
+}
 public class SCR_Explo : MonoBehaviour {
 
-    public GameObject[] v_Items;
+    public List< C_Itemsss> v_Items;
+
     [Range(20,100)]
     public float v_Fuerza;
-    [Range(1, 30),Tooltip("Cuantos objetos a crear")]
-    public int v_Cuantos=20;
-    [Range(0, 5)]
-    public int v_Tipo = 0;
+
     private void Awake()
     {
         Vector3 rand = Vector3.zero;
         GameObject _obj;
-        for(int i=0; i<v_Cuantos; i++)
+        int _cuantos = 0;
+        for (int i = 0; i < v_Items.Count; i++)
         {
-            _obj = Instantiate(v_Items[v_Tipo], transform.position, Quaternion.identity);
-            rand.x = Random.Range(-10,10);
-            rand.y = Random.Range(-10,10);
-            rand.z = Random.Range(-10,10);
-            _obj.GetComponent<Rigidbody>().AddForce(rand* v_Fuerza);
+            _cuantos = v_Items[i].v_Cuantos;
+            for(int j=0; j<_cuantos; j++)
+            {
+                _obj = Instantiate(v_Items[i].v_Modelo, transform.position, Quaternion.identity);
+                rand.x = Random.Range(-10, 10);
+                rand.y = Random.Range(-10, 10);
+                rand.z = Random.Range(-10, 10);
+                _obj.GetComponent<Rigidbody>().AddForce(rand * v_Fuerza);
+            }
         }
     }
     private void OnDrawGizmosSelected()
