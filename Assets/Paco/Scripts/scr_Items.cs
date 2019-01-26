@@ -82,7 +82,6 @@ public class scr_Items : MonoBehaviour {
             ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);
         }
         
-
         if (tipoObj == 4)
         {
             Dinamita();
@@ -91,7 +90,12 @@ public class scr_Items : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player" )
+        if (tipoObj == 4)
+        {
+            detonante = true;
+        }
+
+        if (collision.gameObject.tag == "Player" )
         {
             switch (tipoObj)
             {
@@ -113,9 +117,12 @@ public class scr_Items : MonoBehaviour {
                     break;
                 default:
                     break;
-            }       
-                       
+            }
+
         }
+       
+           
+       
     }
 
     private void OnTriggerStay(Collider other)
@@ -187,9 +194,11 @@ public class scr_Items : MonoBehaviour {
 
         foreach (Collider objetos in objEspacio)
         {
+            print("algo");
             Rigidbody rb = objetos.GetComponent<Rigidbody>();
             if(rb != null && detonante == true)
             {
+                print("explosion?");
                 rb.AddExplosionForce(50f, transform.position, 5f);
                 if (multiplicador == false)
                 {
@@ -205,7 +214,6 @@ public class scr_Items : MonoBehaviour {
             {
                 Vector3 dirActual = (this.transform.position - player.transform.position);
                 magnitud = dirActual.magnitude;            
-
                
                 //Debug.DrawLine(transform.position, transform.forward, Color.red); print("Hit");
             }
