@@ -37,15 +37,16 @@ public class scr_Items : MonoBehaviour {
     Vector3 miPosCentro;
     Rigidbody mirigi, jugarigi;
     scr_PlayerStats PlayerScript;
+    Comunicadores ComunScript;
 
     // Use this for initialization
     void Start () {
-        PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_PlayerStats>();
-        player = GameObject.FindGameObjectWithTag("Player");
-
         mirigi = GetComponent<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        ComunScript = GameObject.Find("Comunicadores").GetComponent<Comunicadores>();
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
+        PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_PlayerStats>();            
+        
         switch (tipoobjeto)
         {
             case 1://es meteoro
@@ -86,8 +87,7 @@ public class scr_Items : MonoBehaviour {
                     break;
                
                 case 4:
-                    damage -= magnitud;
-                   
+                    damage -= magnitud;                   
                     PlayerScript.Add_Dmg(damage);
                     break;
                 default:
@@ -129,14 +129,17 @@ public class scr_Items : MonoBehaviour {
             {
                 case 7:
                     PlayerScript.Add_Happiness(damage);
+                    ComunScript.Play_Audio();
                     Destroy(this.gameObject);
                     break;
                 case 9:
                     PlayerScript.Add_Food(damage);
+                    ComunScript.Play_Audio();
                     Destroy(this.gameObject);
                     break;
                 case 10:
                     PlayerScript.St_Health = 100;
+                    ComunScript.Play_Audio();
                     Destroy(this.gameObject);
                     break;
 

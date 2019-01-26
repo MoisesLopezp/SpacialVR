@@ -4,19 +4,40 @@ using UnityEngine;
 
 public class Comunicadores : MonoBehaviour {
 
-    int[] milistilla;
-    int contador=0;
-    bool match = false;
+    public AudioClip[] audio_Comunicadores = new AudioClip[3];
+    AudioSource source_Player;
 
+    int[] milistilla;
+    int contador = 0, iterador_lista_audio = 0;
+    bool match = false;
+    public int num_clips = 3;
 
     void Start()
     {
+        Random_List();
+    }
 
-        milistilla = new int[3];
+    public void Play_Audio()
+    {
+        source_Player.clip = audio_Comunicadores[milistilla[iterador_lista_audio]];
+        source_Player.Play();
+        iterador_lista_audio++;
 
-        for (int i = 0; i < 3; i++)
+        if(iterador_lista_audio < num_clips)
         {
-            int ite = Random.Range(1, 3);
+            iterador_lista_audio = 0;
+            Random_List();
+        }
+
+    }
+
+    void Random_List()
+    {
+        milistilla = new int[num_clips];
+
+        for (int i = 0; i < num_clips; i++)
+        {
+            int ite = Random.Range(1, num_clips);
 
             if (milistilla[ite] == 0)
             {
@@ -26,7 +47,7 @@ public class Comunicadores : MonoBehaviour {
             {
                 while (!match)
                 {
-                    ite = Random.Range(0, 3);
+                    ite = Random.Range(0, num_clips);
                     if (milistilla[ite] == 0) { match = true; }
                 }
                 milistilla[ite] = i;
@@ -35,10 +56,9 @@ public class Comunicadores : MonoBehaviour {
 
         }
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < num_clips; i++)
         {
             print(milistilla[i]);
         }
-
     }
 }
