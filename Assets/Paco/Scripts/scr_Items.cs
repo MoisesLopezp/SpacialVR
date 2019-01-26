@@ -32,7 +32,7 @@ public class scr_Items : MonoBehaviour {
     bool hoyonegro = false;
 
     GameObject ui_Image;
-    //public GameObject prefab_Canvas;
+    public GameObject prefab_Canvas;
 
     RaycastHit hit;    
     GameObject player, Canvas;
@@ -44,14 +44,14 @@ public class scr_Items : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        /*
+        
         if (tipoObj != 3 && tipoObj != 5 && tipoObj != 1)
         {
             ui_Image = Instantiate(prefab_Canvas, this.gameObject.transform);
             ui_Image.transform.SetParent(this.gameObject.transform);
            
         }
-        */
+        
         mirigi = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         
@@ -80,8 +80,8 @@ public class scr_Items : MonoBehaviour {
 	void Update () {
         if (tipoObj != 3 && tipoObj != 5 && tipoObj != 1)
         {
-            /*ui_Image.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
-            ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);*/
+            ui_Image.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
+            ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);
         }
         
         if (tipoObj == 4)
@@ -129,10 +129,7 @@ public class scr_Items : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        /*if (tipoObj == 4)
-        {
-            detonante = true;
-        }*/
+        
         if(other.gameObject.tag == "Player" )
         {
             switch (tipoObj)

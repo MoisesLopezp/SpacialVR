@@ -8,6 +8,7 @@ TagManager:
   - KillZone
   - Dmg
   - Explo
+  - UI_Image
   layers:
   - Default
   - TransparentFX
