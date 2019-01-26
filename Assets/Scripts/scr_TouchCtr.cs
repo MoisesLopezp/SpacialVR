@@ -47,7 +47,7 @@ public class scr_TouchCtr : MonoBehaviour {
         
         Quaternion HandQ = OVRInput.GetLocalControllerRotation(MyController);
 
-        transform.localPosition = OVRInput.GetLocalControllerPosition(MyController)+new Vector3(0f,0.6f,0f);
+        transform.localPosition = OVRInput.GetLocalControllerPosition(MyController)+new Vector3(0f,0.0f,0f);
         transform.rotation = OVRInput.GetLocalControllerRotation(MyController);
             //Quaternion.Euler(HandQ.eulerAngles.x, HandQ.eulerAngles.y, HandQ.eulerAngles.z);
 
