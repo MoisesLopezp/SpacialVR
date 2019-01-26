@@ -44,7 +44,7 @@ public class scr_Items : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (tipoObj != 3 && tipoObj != 5)
+        if (tipoObj != 3 && tipoObj != 5 && tipoObj != 1)
         {
             ui_Image = Instantiate(prefab_Canvas, this.gameObject.transform);
             ui_Image.transform.SetParent(this.gameObject.transform);
@@ -76,7 +76,7 @@ public class scr_Items : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (tipoObj != 3 && tipoObj != 5)
+        if (tipoObj != 3 && tipoObj != 5 && tipoObj != 1)
         {
             ui_Image.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
             ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);
