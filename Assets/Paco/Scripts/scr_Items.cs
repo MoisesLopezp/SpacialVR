@@ -80,15 +80,20 @@ public class scr_Items : MonoBehaviour {
         {
             switch (tipoObj)
             {
-                
+                case 1:
+                    PlayerScript.Add_Dmg(damage);
+                    ComunScript.RecibiDanio = true;
+                    break;
                 case 2:
                     PlayerScript.Add_Dmg(damage);
+                    ComunScript.RecibiDanio = true;
                     Destroy(this.gameObject);
                     break;
                
                 case 4:
                     damage -= magnitud;                   
                     PlayerScript.Add_Dmg(damage);
+                    ComunScript.RecibiDanio = true;
                     break;
                 default:
                     break;
@@ -104,7 +109,8 @@ public class scr_Items : MonoBehaviour {
             switch (tipoObj)
             {
                 case 3:
-                    PlayerScript.Add_Dmg(damage);                    
+                    PlayerScript.Add_Dmg(damage);
+                    ComunScript.RecibiDanio = true;
                     break;
                 case 5:
                     Vector3 nuevadireccion = (this.transform.position - Jugador.transform.position).normalized;
@@ -112,6 +118,7 @@ public class scr_Items : MonoBehaviour {
                     if (distance < 0.2f) { distance = 0.2f; }
                     float force = fuerzaini / (distance * distance);
                     jugarigi.AddForce(nuevadireccion * force);
+                    ComunScript.RecibiDanio = true;
                     break;                
                 default:
                     break;
@@ -140,6 +147,10 @@ public class scr_Items : MonoBehaviour {
                 case 10:
                     PlayerScript.St_Health = 100;
                     ComunScript.Play_Audio();
+                    Destroy(this.gameObject);
+                    break;
+                case 11:
+                    ComunScript.RecibiDanio = false;
                     Destroy(this.gameObject);
                     break;
 
