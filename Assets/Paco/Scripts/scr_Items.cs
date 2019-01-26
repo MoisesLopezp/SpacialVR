@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class scr_Items : MonoBehaviour {
     /*
@@ -30,9 +31,12 @@ public class scr_Items : MonoBehaviour {
     bool multiplicador = false;
     bool hoyonegro = false;
 
-    RaycastHit hit;
+    GameObject ui_Image;
+    public GameObject prefab_Canvas;
+
+    RaycastHit hit;    
+    GameObject player, Canvas;
     Transform Jugador;
-    GameObject player;
     Vector3 miPosCentro;
     Rigidbody mirigi, jugarigi;
     scr_PlayerStats PlayerScript;
@@ -40,11 +44,15 @@ public class scr_Items : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
+        ui_Image = Instantiate(prefab_Canvas, this.gameObject.transform);
+        ui_Image.transform.SetParent(this.gameObject.transform);
         mirigi = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
-        ComunScript = GameObject.Find("Comunicadores").GetComponent<Comunicadores>();
+        
+        ComunScript = FindObjectOfType<Comunicadores>();
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_PlayerStats>();            
+        PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_PlayerStats>();
         
         switch (tipoObj)
         {
@@ -65,8 +73,12 @@ public class scr_Items : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        ui_Image.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y +1 , this.gameObject.transform.position.z);
+        ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);
         
-        if(tipoObj == 4)
+
+        if (tipoObj == 4)
         {
             Dinamita();
         }

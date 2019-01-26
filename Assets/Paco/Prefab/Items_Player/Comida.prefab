@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631507886638792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.97, y: 1.0500212, z: -0.46855974}
+  m_LocalPosition: {x: -6.42, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,6 +115,8 @@ MonoBehaviour:
   inc_dec_Valor: 0
   tipoObj: 8
   detonante: 0
+  prefab_Canvas: {fileID: 1454545297704326, guid: 911514aac7c76cd41ba300aa27f75f44,
+    type: 2}
 --- !u!135 &135615845362482530
 SphereCollider:
   m_ObjectHideFlags: 1

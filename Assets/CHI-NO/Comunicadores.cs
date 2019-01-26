@@ -64,10 +64,6 @@ public class Comunicadores : MonoBehaviour {
 
         }
 
-        for (int i = 0; i < num_clips; i++)
-        {
-            print(milistilla[i]);
-        }
     }
 
     IEnumerator PropWin()
