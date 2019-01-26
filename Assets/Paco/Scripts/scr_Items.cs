@@ -53,9 +53,9 @@ public class scr_Items : MonoBehaviour {
                 Direccion = new Vector3(Direccion.x + Random.Range(-0.1f, 0.1f), Direccion.y + Random.Range(-0.1f, 0.1f), Direccion.z + Random.Range(-0.1f, 0.1f));
                 mirigi.AddForce(Direccion * fuerzaini, ForceMode.Impulse);
                 break;
-            case 2://hoyonegro
+            case 5://hoyonegro
                 hoyonegro = !hoyonegro;
-                jugarigi = Jugador.GetComponentInChildren<Rigidbody>();
+                jugarigi = Jugador.GetComponent<Rigidbody>();
                 break;
             default:
                 break;
@@ -81,6 +81,7 @@ public class scr_Items : MonoBehaviour {
                 case 1:
                     PlayerScript.Add_Dmg(inc_dec_Valor);
                     ComunScript.RecibiDanio = true;
+                    Destroy(this.gameObject);
                     break;
                 case 2:
                     PlayerScript.Add_Dmg(inc_dec_Valor);
