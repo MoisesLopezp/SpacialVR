@@ -115,6 +115,8 @@ MonoBehaviour:
   inc_dec_Valor: 0
   tipoObj: 7
   detonante: 0
+  prefab_Canvas: {fileID: 1477539260706100, guid: 22ef441a5165beb44bfedf2f0a467b06,
+    type: 2}
 --- !u!135 &135918728430754506
 SphereCollider:
   m_ObjectHideFlags: 1
