@@ -11,8 +11,11 @@ public class SCR_HazardSpawner : MonoBehaviour
     //Rny: El objeto padre de todos los objetos que se creen
     public Transform hazardsParent;
 
+    private Transform playerTransform;
+
     private void Start()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         //Rny: Si no se defina la distancia de Spawneo se pone en 30
         if (SpawnDistance == 0)
             SpawnDistance = 30;
@@ -27,7 +30,7 @@ public class SCR_HazardSpawner : MonoBehaviour
         float posZ = (SpawnDistance - (Mathf.Abs(posX) + Mathf.Abs(posY)));
 
         //Rny: Se spawnea el objeto en la posicion asignada
-        GameObject myHazard = Instantiate(hazards[(int)_hazardIndex], new Vector3(posX, posY, posZ), Quaternion.identity);
+        GameObject myHazard = Instantiate(hazards[(int)_hazardIndex], playerTransform.position +  new Vector3(posX, posY, posZ), Quaternion.identity);
         myHazard.transform.parent = hazardsParent;
         StartCoroutine(ObjectKiller(myHazard, _deathTime));
         Debug.Log("Spawning " + myHazard.name + " at " + new Vector3(posX, posY, posZ));
