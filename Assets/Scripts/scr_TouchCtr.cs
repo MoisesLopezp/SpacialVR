@@ -7,6 +7,7 @@ public class scr_TouchCtr : MonoBehaviour {
     public OVRInput.Controller MyController;
     public Animator AnimatorHand;
     public GameObject Player;
+    public GameObject Camera;
 
     GameObject Hand;
 
@@ -29,7 +30,7 @@ public class scr_TouchCtr : MonoBehaviour {
 	void Start () {
         ObjectGrab = null;
         PosibleObjectGrab = null;
-        PlayerRB = GetComponent<Rigidbody>();
+        PlayerRB = Player.GetComponent<Rigidbody>();
 
         Hand = AnimatorHand.gameObject;
         if (MyController == OVRInput.Controller.RTouch)
@@ -101,14 +102,34 @@ public class scr_TouchCtr : MonoBehaviour {
         }
         */
 
-        if (OVRInput.Get(OVRInput.Button.One))
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            PlayerRB.AddForce(Player.transform.up, ForceMode.Acceleration);
+            PlayerRB.AddForce(Player.transform.up*8f);
         }
 
-        if (OVRInput.Get(OVRInput.Button.One))
+        if (OVRInput.GetDown(OVRInput.Button.Two))
         {
-            PlayerRB.AddForce(Player.transform.up*-1, ForceMode.Acceleration);
+            PlayerRB.AddForce(Player.transform.up*-8f);
+        }
+
+        if (Input.GetAxis("Vertical")>0.5f)
+        {
+            PlayerRB.AddForce(Camera.transform.forward);
+        }
+
+        if (Input.GetAxis("Vertical") < -0.5f)
+        {
+            PlayerRB.AddForce(Camera.transform.forward*-1f);
+        }
+
+        if (Input.GetAxis("Horizontal") > 0.5f)
+        {
+            PlayerRB.AddForce(Camera.transform.right);
+        }
+
+        if (Input.GetAxis("Horizontal") < -0.5f)
+        {
+            PlayerRB.AddForce(Camera.transform.right*-1f);
         }
 
         if (!PosibleObjectGrab)

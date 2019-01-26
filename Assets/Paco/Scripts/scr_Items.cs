@@ -32,7 +32,7 @@ public class scr_Items : MonoBehaviour {
     bool hoyonegro = false;
 
     GameObject ui_Image;
-    public GameObject prefab_Canvas;
+    //public GameObject prefab_Canvas;
 
     RaycastHit hit;    
     GameObject player, Canvas;
@@ -44,12 +44,14 @@ public class scr_Items : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        /*
         if (tipoObj != 3 && tipoObj != 5 && tipoObj != 1)
         {
             ui_Image = Instantiate(prefab_Canvas, this.gameObject.transform);
             ui_Image.transform.SetParent(this.gameObject.transform);
            
         }
+        */
         mirigi = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         

@@ -38,8 +38,11 @@ public class SCR_HazardSpawner : MonoBehaviour
     {
         //Rny: espera por la hora de su muerte x.x
         yield return new WaitForSeconds(_deathTime);
-        //Rny: Mata el objeto RIP in peace
-        Debug.Log("Hello I'm going to kill " + objectToKill.name);
-        DestroyObject(objectToKill);
+        if (objectToKill)
+        {
+            //Rny: Mata el objeto RIP in peace
+            Debug.Log("Hello I'm going to kill " + objectToKill.name);
+            DestroyObject(objectToKill);
+        }
     }
 }

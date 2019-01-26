@@ -12,7 +12,7 @@ public class SCR_Explo : MonoBehaviour {
 
     public List< C_Itemsss> v_Items;
 
-    [Range(20,100)]
+    [Range(1,100)]
     public float v_Fuerza;
 
     private void Awake()
