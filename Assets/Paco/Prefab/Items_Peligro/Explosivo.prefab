@@ -112,10 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaini: 1
-  damage: 20
+  inc_dec_Valor: 0
   tipoObj: 4
-  tipoobjeto: 0
-  dmg: 10
   detonante: 0
 --- !u!135 &135619824954520196
 SphereCollider:

@@ -36,8 +36,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4699607589781148}
-  - component: {fileID: 114179160275773558}
   - component: {fileID: 135893653003319470}
+  - component: {fileID: 114227533264627690}
   m_Layer: 0
   m_Name: HoyoNegro
   m_TagString: Untagged
@@ -72,7 +72,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114179160275773558
+--- !u!114 &114227533264627690
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -80,12 +80,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777734222189794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5d26ea7a83b5146bf7190672338009, type: 3}
+  m_Script: {fileID: 11500000, guid: f9fcea8f496f7824daff993620ff9cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoobjeto: 2
-  dmg: 10
   fuerzaini: 10
+  inc_dec_Valor: 0
+  tipoObj: 5
+  detonante: 0
 --- !u!135 &135893653003319470
 SphereCollider:
   m_ObjectHideFlags: 1

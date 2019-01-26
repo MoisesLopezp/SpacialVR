@@ -124,8 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaini: 1
-  damage: 0.5
+  inc_dec_Valor: 0
   tipoObj: 3
-  tipoobjeto: 0
-  dmg: 10
   detonante: 0
