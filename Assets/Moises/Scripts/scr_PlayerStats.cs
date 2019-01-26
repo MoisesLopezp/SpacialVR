@@ -16,6 +16,7 @@ public class scr_PlayerStats : MonoBehaviour {
     {
         St_Air += _plus;
         if (St_Air > 100f) { St_Air = 100f; }
+        scr_Mng.GM.UpdateUIStats();
     }
 
     public void Rest_Air(float _val)
@@ -26,12 +27,14 @@ public class scr_PlayerStats : MonoBehaviour {
             St_Air = 0f;
             Die();
         }
+        scr_Mng.GM.UpdateUIStats();
     }
 
     public void Add_Happiness(float _plus)
     {
         St_Happiness += _plus;
         if (St_Happiness > 100f) { St_Happiness = 100f; }
+        scr_Mng.GM.UpdateUIStats();
     }
 
     public void Rest_Happiness(float _val)
@@ -42,6 +45,7 @@ public class scr_PlayerStats : MonoBehaviour {
             St_Happiness = 0f;
             Die();
         }
+        scr_Mng.GM.UpdateUIStats();
     }
 
     public void Add_Food(float _plus)
@@ -49,6 +53,7 @@ public class scr_PlayerStats : MonoBehaviour {
         St_Food += _plus;
         if (St_Food > 200f) { St_Food = 200f; }
         if (St_Food > 100f) { Add_Mass(); }
+        scr_Mng.GM.UpdateUIStats();
     }
 
     public void Rest_Food(float _val)
@@ -59,6 +64,7 @@ public class scr_PlayerStats : MonoBehaviour {
             St_Food = 0f;
             Die();
         }
+        scr_Mng.GM.UpdateUIStats();
     }
 
     public void Add_Dmg(float dmg)
@@ -69,6 +75,7 @@ public class scr_PlayerStats : MonoBehaviour {
             St_Health = 0f;
             Die();
         }
+        scr_Mng.GM.UpdateUIStats();
     }
 
     public void Add_ProbWin(float _plus)

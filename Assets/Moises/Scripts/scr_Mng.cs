@@ -27,6 +27,11 @@ public class scr_Mng : MonoBehaviour {
     public Text Txt_Time;
     public Text Txt_ProvWin;
 
+    public Text Txt_st_air;
+    public Text Txt_st_food;
+    public Text Txt_st_health;
+    public Text Txt_st_Happiness;
+
     int TicsAir = 2;
     int TicsHappiness = 3;
     int TicsFood = 4;
@@ -44,6 +49,7 @@ public class scr_Mng : MonoBehaviour {
         Txt_Days.text = TimePast.Days.ToString();
         Txt_Time.text = TimePast.Hours.ToString();
         Txt_ProvWin.text = ProbWin.ToString();
+
         StartCoroutine(CTime());
     }
 
@@ -51,6 +57,14 @@ public class scr_Mng : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void UpdateUIStats()
+    {
+        Txt_st_air.text = "%" + Astronaut.St_Air.ToString();
+        Txt_st_food.text = "%" + Astronaut.St_Food.ToString();
+        Txt_st_health.text = "%" + Astronaut.St_Health.ToString();
+        Txt_st_Happiness.text = "%" + Astronaut.St_Happiness.ToString();
+    }
 
     public void Add_ProbWin(float _plus)
     {

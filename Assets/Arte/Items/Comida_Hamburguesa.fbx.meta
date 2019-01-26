@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 15c2ca043e44ee44dbc629392faa75ad
-timeCreated: 1548535211
+guid: 2f6ca89eaccc4724c89c0c38646abe17
+timeCreated: 1548542816
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Hamburguesa
+    4300000: hamburguesa
   externalObjects: {}
   materials:
     importMaterials: 1
