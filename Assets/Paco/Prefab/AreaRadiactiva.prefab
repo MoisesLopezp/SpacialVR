@@ -123,5 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fcea8f496f7824daff993620ff9cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: -0.5
+  fuerzaini: 1
+  damage: 0.5
   tipoObj: 3
+  tipoobjeto: 0
+  dmg: 10
+  detonante: 0
