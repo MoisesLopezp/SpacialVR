@@ -78,8 +78,8 @@ public class scr_Items : MonoBehaviour {
 	void Update () {
         if (tipoObj != 3 && tipoObj != 5 && tipoObj != 1)
         {
-            ui_Image.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
-            ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);
+            /*ui_Image.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
+            ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);*/
         }
         
         if (tipoObj == 4)
@@ -127,6 +127,10 @@ public class scr_Items : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
+        /*if (tipoObj == 4)
+        {
+            detonante = true;
+        }*/
         if(other.gameObject.tag == "Player" )
         {
             switch (tipoObj)
@@ -194,11 +198,9 @@ public class scr_Items : MonoBehaviour {
 
         foreach (Collider objetos in objEspacio)
         {
-            print("algo");
             Rigidbody rb = objetos.GetComponent<Rigidbody>();
             if(rb != null && detonante == true)
             {
-                print("explosion?");
                 rb.AddExplosionForce(50f, transform.position, 5f);
                 if (multiplicador == false)
                 {
