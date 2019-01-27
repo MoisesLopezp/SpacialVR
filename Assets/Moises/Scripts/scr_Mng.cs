@@ -39,6 +39,8 @@ public class scr_Mng : MonoBehaviour {
     GameObject GameOverScreen;
     GameObject SuccesScreen;
 
+    public Comunicadores Comunicador;
+
     private void Awake()
     {
         GM = this;
@@ -60,10 +62,10 @@ public class scr_Mng : MonoBehaviour {
 
     public void UpdateUIStats()
     {
-        Txt_st_air.text = "%" + Astronaut.St_Air.ToString();
-        Txt_st_food.text = "%" + Astronaut.St_Food.ToString();
-        Txt_st_health.text = "%" + Astronaut.St_Health.ToString();
-        Txt_st_Happiness.text = "%" + Astronaut.St_Happiness.ToString();
+        Txt_st_air.text = "A %" + Astronaut.St_Air.ToString();
+        Txt_st_food.text = "C %" + Astronaut.St_Food.ToString();
+        Txt_st_health.text = "V %" + Astronaut.St_Health.ToString();
+        Txt_st_Happiness.text = "F %" + Astronaut.St_Happiness.ToString();
     }
 
     public void Add_ProbWin(float _plus)

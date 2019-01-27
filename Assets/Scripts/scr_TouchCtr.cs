@@ -20,8 +20,6 @@ public class scr_TouchCtr : MonoBehaviour {
     OVRInput.Axis1D GrabButton;
     OVRInput.Axis1D AcctionButton;
 
-    OVRInput.Axis2D Move;
-
     bool IsRight = true;
 
     Rigidbody PlayerRB;
@@ -38,13 +36,11 @@ public class scr_TouchCtr : MonoBehaviour {
             IsRight = true;
             GrabButton = OVRInput.Axis1D.SecondaryHandTrigger;
             AcctionButton = OVRInput.Axis1D.SecondaryIndexTrigger;
-            Move = OVRInput.Axis2D.SecondaryThumbstick;
         } else
         {
             IsRight = false;
             GrabButton = OVRInput.Axis1D.PrimaryHandTrigger;
             AcctionButton = OVRInput.Axis1D.PrimaryIndexTrigger;
-            Move = OVRInput.Axis2D.PrimaryThumbstick;
         }
     }
 
@@ -81,6 +77,7 @@ public class scr_TouchCtr : MonoBehaviour {
             {
                 ObjectGrab.GetComponent<Rigidbody>().useGravity = true;
                 ObjectGrab.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(MyController);
+                ObjectGrab.transform.parent = null;
                 if (ObjectGrab.GetComponent<SphereCollider>())
                     ObjectGrab.GetComponent<SphereCollider>().enabled = true;
                 if (ObjectGrab.GetComponent<BoxCollider>())
@@ -94,10 +91,6 @@ public class scr_TouchCtr : MonoBehaviour {
             ObjectGrab.transform.position = Hand.transform.position;
             ObjectGrab.transform.rotation = Hand.transform.rotation;
             ObjectGrab.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            if (OVRInput.Get(AcctionButton)>0.5)
-            {
-                ObjectGrab.SendMessage("Touch_Acction");
-            }
         }
         
         if (OVRInput.GetDown(OVRInput.Button.One))

@@ -26,9 +26,9 @@ public class SCR_Explo : MonoBehaviour {
             for(int j=0; j<_cuantos; j++)
             {
                 _obj = Instantiate(v_Items[i].v_Modelo, transform.position, Quaternion.identity);
-                rand.x = Random.Range(-10, 10);
-                rand.y = Random.Range(-10, 10);
-                rand.z = Random.Range(-10, 10);
+                rand.x = Random.Range(-6, 6);
+                rand.y = Random.Range(-6, 6);
+                rand.z = Random.Range(-6, 6);
                 _obj.GetComponent<Rigidbody>().AddForce(rand * v_Fuerza);
             }
         }
@@ -36,6 +36,6 @@ public class SCR_Explo : MonoBehaviour {
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 1.0f);
+        Gizmos.DrawSphere(transform.position, 0.1f);
     }
 }

@@ -17,6 +17,7 @@ public class Comunicadores : MonoBehaviour {
 
     void Start()
     {
+        source_Player = GetComponent<AudioSource>();
         Random_List();
         PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_PlayerStats>();
     }

@@ -31,7 +31,7 @@ public class scr_Items : MonoBehaviour {
     bool multiplicador = false;
     bool hoyonegro = false;
 
-    GameObject ui_Image;
+    //GameObject ui_Image;
     public GameObject prefab_Canvas;
 
     RaycastHit hit;    
@@ -44,18 +44,18 @@ public class scr_Items : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        /*
         if (tipoObj != 3 && tipoObj != 5 && tipoObj != 1)
         {
             ui_Image = Instantiate(prefab_Canvas, this.gameObject.transform);
             ui_Image.transform.SetParent(this.gameObject.transform);
            
         }
-        
+        */
         mirigi = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
-        
-        ComunScript = FindObjectOfType<Comunicadores>();
+
+        ComunScript = scr_Mng.GM.Comunicador;
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_PlayerStats>();
         
@@ -78,12 +78,13 @@ public class scr_Items : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        /*
         if (tipoObj != 3 && tipoObj != 5 && tipoObj != 1)
         {
             ui_Image.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y + 1, this.gameObject.transform.position.z);
             ui_Image.transform.GetChild(0).GetChild(0).transform.LookAt(Camera.main.transform);
         }
-        
+        */
         if (tipoObj == 4)
         {
             Dinamita();
@@ -161,26 +162,33 @@ public class scr_Items : MonoBehaviour {
             switch (tipoObj)
             {
                 case 6:
-                    MiniGame_BombaAire();
-                    break;
+                    {
+                        MiniGame_BombaAire();   
+                    }break;
                 case 7:
-                    PlayerScript.Add_Happiness(inc_dec_Valor);
-                    ComunScript.Play_Audio();
-                    Destroy(this.gameObject);
-                    break;
+                    {
+                        PlayerScript.Add_Happiness(inc_dec_Valor);
+                        ComunScript.Play_Audio();
+                        Destroy(this.gameObject);
+                    }break;
                 case 9:
-                    PlayerScript.Add_Food(inc_dec_Valor);
-                    ComunScript.Play_Audio();
-                    Destroy(this.gameObject);
-                    break;
+                    {
+                        PlayerScript.Add_Food(inc_dec_Valor);
+                        ComunScript.Play_Audio();
+                        Destroy(this.gameObject);
+                    }break;
                 case 10:
-                    PlayerScript.St_Health = 100;
-                    ComunScript.Play_Audio();
-                    Destroy(this.gameObject);
+                    {
+                        PlayerScript.St_Health = 100;
+                        ComunScript.Play_Audio();
+                        Destroy(this.gameObject);
+                    }
                     break;
                 case 11:
-                    ComunScript.RecibiDanio = false;
-                    Destroy(this.gameObject);
+                    {
+                        ComunScript.RecibiDanio = false;
+                        Destroy(this.gameObject);
+                    }
                     break;
 
                 default:

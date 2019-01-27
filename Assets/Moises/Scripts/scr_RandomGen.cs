@@ -4,27 +4,7 @@ using UnityEngine;
 
 public class scr_RandomGen : MonoBehaviour {
 
-    public GameObject Trash;
-    public GameObject RadioactiveArea;
-    public GameObject Explosives;
-    public GameObject BlackHole;
-    public GameObject AirBomb;
-    public GameObject Gifts;
-    public GameObject Food;
-    public GameObject Communicators;
-    public GameObject SpacialSuit;
-
     public Vector3 MaxDim;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public GameObject SpawnRandomObject(GameObject obj)
     {

@@ -61,8 +61,8 @@ public class SCR_SpaceManager : MonoBehaviour
 
     public void SpawnExplosivo()
     {
-        for (int i = 0; i < 6; i++)
-            hzrd_Spawn.SpawnObject(HAZARDS.Explosivo, Mathf.Infinity);
+        //for (int i = 0; i < 6; i++)
+            //hzrd_Spawn.SpawnObject(HAZARDS.Explosivo, Mathf.Infinity);
     }
 
     private IEnumerator SpawnHoyoNegro()

@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class scr_PlayerStats : MonoBehaviour {
 
+    public CapsuleCollider MyCollider;
+
     public float St_Air = 100f;
     public float St_Happiness = 100f;
     public float St_Food = 100f;
@@ -98,9 +100,15 @@ public class scr_PlayerStats : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        StartCoroutine(DelayCollider());
 	}
 	
+    IEnumerator DelayCollider()
+    {
+        yield return new WaitForSeconds(1f);
+        MyCollider.enabled = true;
+    }
+
 	// Update is called once per frame
 	void Update () {
 		
