@@ -54,10 +54,10 @@ public class scr_TouchCtr : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
+        /*
         if (!OVRInput.GetControllerPositionTracked(MyController))
             Debug.Log("No traking");
-        
+        */
         Quaternion HandQ = OVRInput.GetLocalControllerRotation(MyController);
 
         transform.localPosition = OVRInput.GetLocalControllerPosition(MyController);
@@ -72,10 +72,12 @@ public class scr_TouchCtr : MonoBehaviour {
             if (OVRInput.Get(AcctionButton) > 0.5)
             {
                 RaycastHit hit;
-                Physics.Raycast(transform.position, transform.forward, out hit, 15f, UILayer);
-                if (hit.transform.CompareTag("Button"))
+                if (Physics.Raycast(transform.position, transform.forward, out hit, 15f, UILayer))
                 {
-                    Debug.Log("HitButton");
+                    if (hit.transform.CompareTag("Button"))
+                    {
+                        hit.transform.gameObject.SendMessage("Action");
+                    }
                 }
             }
                 

@@ -21,7 +21,6 @@ public class scr_Mng : MonoBehaviour {
     System.TimeSpan TperSec = new System.TimeSpan(0, 8, 0);
 
     public scr_PlayerStats Astronaut;
-    public scr_RandomGen RandomSpawn;
 
     public Text Txt_Days;
     public Text Txt_Time;
@@ -45,6 +44,8 @@ public class scr_Mng : MonoBehaviour {
 
     public Comunicadores Comunicador;
 
+    public GameObject StartObject;
+
     string text_days;
     string text_hours;
     string text_signal;
@@ -55,7 +56,12 @@ public class scr_Mng : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    public void StartGame () {
+
+        StartObject.SetActive(true);
+        CV_LH.SetActive(true);
+        CV_RH.SetActive(true);
+
         StartCoroutine(CTime());
 
         text_days = scr_Lang.GetText("txt_game_info_01");

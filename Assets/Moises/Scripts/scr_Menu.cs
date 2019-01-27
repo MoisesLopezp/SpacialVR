@@ -16,6 +16,8 @@ public class scr_Menu : MonoBehaviour {
     [HideInInspector]
     public bool HardMode = false;
 
+    public GameObject InitialMenu;
+
     public Dropdown DD_Lang;
     public Toggle TG_r360;
 
@@ -25,7 +27,7 @@ public class scr_Menu : MonoBehaviour {
     {
         MyData = new scr_Config();
         // Initialize the Saver with the default configurations
-        SaveGameFree.Saver.Initialize();
+        Saver.Initialize();
         //MyData = new SaveGameFree.Data_player();
         MyData = Saver.Load<scr_Config>(fileName);
         Op_Leng = MyData.Op_Leng;
@@ -47,8 +49,8 @@ public class scr_Menu : MonoBehaviour {
 
     public void StartGame(bool _HardMode)
     {
-        scr_Mng.GM.CV_LH.SetActive(true);
-        scr_Mng.GM.CV_RH.SetActive(true);
+        InitialMenu.SetActive(false);
+        scr_Mng.GM.StartGame();
         InGame = true;
         HardMode = _HardMode;
     }

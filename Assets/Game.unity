@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2139651859}
-  m_IndirectSpecularColor: {r: 0.23236784, g: 0.23553982, b: 0.27230316, a: 1}
+  m_IndirectSpecularColor: {r: 0.23236749, g: 0.23554096, b: 0.2723016, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -526,6 +526,7 @@ GameObject:
   - component: {fileID: 359075969}
   - component: {fileID: 359075968}
   - component: {fileID: 359075972}
+  - component: {fileID: 359075973}
   m_Layer: 5
   m_Name: Play button
   m_TagString: Button
@@ -660,6 +661,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 238.85, y: 106.59, z: 1}
   m_Center: {x: 0, y: 11.87, z: 0}
+--- !u!114 &359075973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 359075966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83eb312e4af359489d19fa6c6d6b7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IdButton: 0
 --- !u!1 &435765862 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1670249716501024, guid: 5b945b9b4cbc30b44abc36219c8742b3,
@@ -1002,9 +1015,10 @@ GameObject:
   m_Component:
   - component: {fileID: 762738670}
   - component: {fileID: 762738669}
+  - component: {fileID: 762738671}
   - component: {fileID: 762738668}
   m_Layer: 0
-  m_Name: MenuCntrl
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1102,6 +1116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HardMode: 0
+  InitialMenu: {fileID: 1886403100}
   DD_Lang: {fileID: 0}
   TG_r360: {fileID: 0}
 --- !u!4 &762738670
@@ -1117,6 +1132,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762738671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 762738667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604d3246d11581c4bbdfc5f5f98a1888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOver: 0
+  ProbWin: 0
+  Astronaut: {fileID: 1334410440}
+  Txt_Days: {fileID: 469490735}
+  Txt_Time: {fileID: 1728192487}
+  Txt_ProvWin: {fileID: 219607134}
+  Txt_st_air: {fileID: 1749045958}
+  Txt_st_food: {fileID: 1749045957}
+  Txt_st_health: {fileID: 304966995}
+  Txt_st_Happiness: {fileID: 1749045956}
+  CV_LH: {fileID: 435765862}
+  CV_RH: {fileID: 1749045959}
+  GameOverScreen: {fileID: 1755086739}
+  SuccesScreen: {fileID: 1618022970}
+  Explosion: {fileID: 1342122448840548, guid: 15f0e640b97eecd42b7b0391b3089dc4, type: 2}
+  Comunicador: {fileID: 1201227172}
+  StartObject: {fileID: 246500082}
 --- !u!1 &777825630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,57 +1770,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1158242479}
   - component: {fileID: 1158242478}
-  - component: {fileID: 1158242477}
-  - component: {fileID: 1158242475}
   - component: {fileID: 1158242480}
   - component: {fileID: 1158242481}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1158242475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1158242474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6779c436971fd9479c41bb9279aaf59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxDim: {x: 0, y: 0, z: 0}
---- !u!114 &1158242477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1158242474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604d3246d11581c4bbdfc5f5f98a1888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameOver: 0
-  ProbWin: 0
-  Astronaut: {fileID: 1334410440}
-  RandomSpawn: {fileID: 1158242475}
-  Txt_Days: {fileID: 469490735}
-  Txt_Time: {fileID: 1728192487}
-  Txt_ProvWin: {fileID: 219607134}
-  Txt_st_air: {fileID: 1749045958}
-  Txt_st_food: {fileID: 1749045957}
-  Txt_st_health: {fileID: 304966995}
-  Txt_st_Happiness: {fileID: 1749045956}
-  CV_LH: {fileID: 435765862}
-  CV_RH: {fileID: 1749045959}
-  GameOverScreen: {fileID: 1755086739}
-  SuccesScreen: {fileID: 1618022970}
-  Explosion: {fileID: 1342122448840548, guid: 15f0e640b97eecd42b7b0391b3089dc4, type: 2}
-  Comunicador: {fileID: 1201227172}
 --- !u!114 &1158242478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5669,7 +5670,7 @@ GameObject:
   - component: {fileID: 1886403102}
   - component: {fileID: 1886403101}
   m_Layer: 5
-  m_Name: MenuPP_Canvas 1
+  m_Name: Menu_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5743,8 +5744,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1886403100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.83}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalPosition: {x: 0, y: 0, z: 5.33}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 532487665}
   - {fileID: 359075967}
@@ -5757,7 +5758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.73}
+  m_AnchoredPosition: {x: 0, y: -0.21}
   m_SizeDelta: {x: 976, y: 549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1998790070 stripped
