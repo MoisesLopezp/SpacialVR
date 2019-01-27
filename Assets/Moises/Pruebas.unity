@@ -606,6 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HardMode: 0
+  InitialMenu: {fileID: 0}
   DD_Lang: {fileID: 0}
   TG_r360: {fileID: 0}
 --- !u!1 &945015427
@@ -635,6 +636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac6a0f240b13794ebd4b3dfc45bb619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyCollider: {fileID: 0}
+  audioClips: []
   St_Air: 100
   St_Happiness: 100
   St_Food: 100
@@ -806,15 +809,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6779c436971fd9479c41bb9279aaf59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Trash: {fileID: 0}
-  RadioactiveArea: {fileID: 0}
-  Explosives: {fileID: 0}
-  BlackHole: {fileID: 0}
-  AirBomb: {fileID: 0}
-  Gifts: {fileID: 0}
-  Food: {fileID: 0}
-  Communicators: {fileID: 0}
-  SpacialSuit: {fileID: 0}
   MaxDim: {x: 0, y: 0, z: 0}
 --- !u!114 &1973370453
 MonoBehaviour:
@@ -830,10 +824,20 @@ MonoBehaviour:
   GameOver: 0
   ProbWin: 0
   Astronaut: {fileID: 945015428}
-  RandomSpawn: {fileID: 1973370452}
   Txt_Days: {fileID: 260817321}
   Txt_Time: {fileID: 1813263019}
   Txt_ProvWin: {fileID: 534526012}
+  Txt_st_air: {fileID: 0}
+  Txt_st_food: {fileID: 0}
+  Txt_st_health: {fileID: 0}
+  Txt_st_Happiness: {fileID: 0}
+  CV_LH: {fileID: 0}
+  CV_RH: {fileID: 0}
+  GameOverScreen: {fileID: 0}
+  SuccesScreen: {fileID: 0}
+  Explosion: {fileID: 0}
+  Comunicador: {fileID: 0}
+  StartObject: {fileID: 0}
 --- !u!4 &1973370454
 Transform:
   m_ObjectHideFlags: 0
