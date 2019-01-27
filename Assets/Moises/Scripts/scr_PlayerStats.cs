@@ -126,6 +126,18 @@ public class scr_PlayerStats : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Dmg"))
+        {
+            Add_Dmg(10f * Time.deltaTime);
+            PlayAudio(Random.Range(0, 2));
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("KillZone"))
+        {
+            Add_Dmg(1f * Time.deltaTime);
+        }
     }
 }

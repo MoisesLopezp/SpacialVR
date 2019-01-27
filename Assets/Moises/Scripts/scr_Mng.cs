@@ -36,8 +36,9 @@ public class scr_Mng : MonoBehaviour {
     int TicsHappiness = 3;
     int TicsFood = 4;
 
-    GameObject GameOverScreen;
-    GameObject SuccesScreen;
+    public GameObject GameOverScreen;
+    public GameObject SuccesScreen;
+    public GameObject Explosion;
 
     public Comunicadores Comunicador;
 

@@ -117,6 +117,8 @@ public class scr_Items : MonoBehaviour {
                     inc_dec_Valor -= magnitud;                   
                     PlayerScript.Add_Dmg(inc_dec_Valor);
                     ComunScript.RecibiDanio = true;
+                    GameObject expl = Instantiate(scr_Mng.GM.Explosion, transform.position, Quaternion.identity);
+                    Destroy(expl, 3f);
                     Destroy(gameObject);
                     break;
                 default:
