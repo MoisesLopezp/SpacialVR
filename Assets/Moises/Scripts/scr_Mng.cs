@@ -46,6 +46,9 @@ public class scr_Mng : MonoBehaviour {
 
     public GameObject StartObject;
 
+    public scr_TouchCtr LH;
+    public scr_TouchCtr RH;
+
     string text_days;
     string text_hours;
     string text_signal;
@@ -57,6 +60,8 @@ public class scr_Mng : MonoBehaviour {
 
     // Use this for initialization
     public void StartGame () {
+
+        RH.Selector.enabled = false;
 
         StartObject.SetActive(true);
         CV_LH.SetActive(true);

@@ -8,8 +8,10 @@ public class scr_TouchCtr : MonoBehaviour {
     public Animator AnimatorHand;
     public GameObject Player;
     public GameObject Camera;
+    public GameObject PointGrab;
 
-    LineRenderer Selector;
+    [HideInInspector]
+    public LineRenderer Selector;
 
     GameObject Hand;
 
@@ -26,8 +28,6 @@ public class scr_TouchCtr : MonoBehaviour {
 
     Rigidbody PlayerRB;
 
-    Rigidbody RB;
-
     public LayerMask UILayer;
 
     // Use this for initialization
@@ -35,7 +35,6 @@ public class scr_TouchCtr : MonoBehaviour {
         ObjectGrab = null;
         PosibleObjectGrab = null;
         PlayerRB = Player.GetComponent<Rigidbody>();
-        RB = GetComponent<Rigidbody>();
 
         Hand = AnimatorHand.gameObject;
         if (MyController == OVRInput.Controller.RTouch)
@@ -65,7 +64,7 @@ public class scr_TouchCtr : MonoBehaviour {
         transform.rotation = OVRInput.GetLocalControllerRotation(MyController);
             //Quaternion.Euler(HandQ.eulerAngles.x, HandQ.eulerAngles.y, HandQ.eulerAngles.z);
 
-        if (IsRight)
+        if (IsRight && !scr_Menu.InGame)
         {
             Selector.SetPosition(0, transform.position);
             Selector.SetPosition(1, transform.forward * 10);
@@ -92,7 +91,7 @@ public class scr_TouchCtr : MonoBehaviour {
                 ObjectGrab.transform.position = Hand.transform.position;
                 ObjectGrab.transform.rotation = Hand.transform.rotation;
                 ObjectGrab.GetComponent<Rigidbody>().useGravity = false;
-                ObjectGrab.transform.SetParent(Hand.transform);
+                ObjectGrab.transform.SetParent(PointGrab.transform);
                 if (ObjectGrab.GetComponent<SphereCollider>())
                     ObjectGrab.GetComponent<SphereCollider>().enabled = false;
                 if (ObjectGrab.GetComponent<BoxCollider>())
@@ -116,8 +115,8 @@ public class scr_TouchCtr : MonoBehaviour {
         
         if (ObjectGrab)
         {
-            ObjectGrab.transform.position = Hand.transform.position;
-            ObjectGrab.transform.rotation = Hand.transform.rotation;
+            ObjectGrab.transform.position = PointGrab.transform.position;
+            ObjectGrab.transform.rotation = PointGrab.transform.rotation;
             ObjectGrab.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
         
