@@ -9,6 +9,8 @@ public class scr_TouchCtr : MonoBehaviour {
     public GameObject Player;
     public GameObject Camera;
 
+    LineRenderer Selector;
+
     GameObject Hand;
 
     [HideInInspector]
@@ -36,6 +38,7 @@ public class scr_TouchCtr : MonoBehaviour {
         Hand = AnimatorHand.gameObject;
         if (MyController == OVRInput.Controller.RTouch)
         {
+            Selector = GetComponent<LineRenderer>();
             IsRight = true;
             GrabButton = OVRInput.Axis1D.SecondaryHandTrigger;
             AcctionButton = OVRInput.Axis1D.SecondaryIndexTrigger;
@@ -62,8 +65,8 @@ public class scr_TouchCtr : MonoBehaviour {
 
         if (IsRight)
         {
-            Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
-            Debug.DrawRay(transform.position, forward, Color.cyan);
+            Selector.SetPosition(0, transform.position);
+            Selector.SetPosition(1, transform.forward * 10);
         }
 
         if (OVRInput.Get(GrabButton)>0.5)

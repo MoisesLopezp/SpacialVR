@@ -10,7 +10,7 @@ public class SCR_SpaceManager : MonoBehaviour
         Asteroides,
         Escombros,
         Radiacion,
-        Explosivo,
+        Radio,
         HoyoNegro
     }
 
@@ -26,8 +26,7 @@ public class SCR_SpaceManager : MonoBehaviour
         StartCoroutine(SpawnEscombro());
         StartCoroutine(SpawnRadiacion());
         StartCoroutine(SpawnHoyoNegro());
-        //Rny: Esta solo se corre una vez al inicio
-        SpawnExplosivo();
+        StartCoroutine(SpawnRadio());
     }
 
     private IEnumerator SpawnAsteroid()
@@ -59,18 +58,22 @@ public class SCR_SpaceManager : MonoBehaviour
         StartCoroutine(SpawnRadiacion());
     }
 
-    public void SpawnExplosivo()
-    {
-        //for (int i = 0; i < 6; i++)
-            //hzrd_Spawn.SpawnObject(HAZARDS.Explosivo, Mathf.Infinity);
-    }
-
     private IEnumerator SpawnHoyoNegro()
     {
         float coolDown = Random.Range(30.0f, 60.0f);
         yield return new WaitForSeconds(coolDown);
 
         hzrd_Spawn.SpawnObject(HAZARDS.HoyoNegro, Random.Range(20.0f, 30.0f));
+        SpawnHoyoNegro();
+        StartCoroutine(SpawnHoyoNegro());
+    }
+
+    private IEnumerator SpawnRadio()
+    {
+        float coolDown = 15.0f;
+        yield return new WaitForSeconds(coolDown);
+
+        hzrd_Spawn.SpawnObject(HAZARDS.HoyoNegro, Mathf.Infinity);
         SpawnHoyoNegro();
         StartCoroutine(SpawnHoyoNegro());
     }

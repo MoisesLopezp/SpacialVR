@@ -7,6 +7,8 @@ public class Comunicadores : MonoBehaviour {
     public AudioClip[] audio_Comunicadores = new AudioClip[3];
     AudioSource source_Player;
     scr_PlayerStats PlayerScript;
+    //Rny: numero de repeticiones del aumento de rescate (max 5)
+    int repertition;
 
 
     int[] milistilla;
@@ -67,9 +69,18 @@ public class Comunicadores : MonoBehaviour {
 
     }
 
+
+    //Rny: Modifique esta funcion para que hciera lo debido, antes solo subia 1% 
     IEnumerator PropWin()
     {
-        yield return new WaitForSeconds(5);
         PlayerScript.Add_ProbWin(1.0f);
+        yield return new WaitForSeconds(1);
+        if (!RecibiDanio && repertition < 5)
+            StartCoroutine(PropWin());
+        else
+        {
+            RecibiDanio = false;
+            repertition = 0;
+        }
     }
 }

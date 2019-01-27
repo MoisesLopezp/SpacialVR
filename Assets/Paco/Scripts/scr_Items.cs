@@ -58,17 +58,23 @@ public class scr_Items : MonoBehaviour {
         ComunScript = scr_Mng.GM.Comunicador;
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         PlayerScript = scr_Mng.GM.Astronaut;
+        Vector3 Direccion = Vector3.zero;
         
         switch (tipoObj)
         {
             case 1://es meteoro
-                Vector3 Direccion = (Jugador.transform.position - this.transform.position).normalized;
+                Direccion = (Jugador.transform.position - this.transform.position).normalized;
                 Direccion = new Vector3(Direccion.x + Random.Range(-0.1f, 0.1f), Direccion.y + Random.Range(-0.1f, 0.1f), Direccion.z + Random.Range(-0.1f, 0.1f));
                 mirigi.AddForce(Direccion * fuerzaini, ForceMode.Impulse);
                 break;
             case 5://hoyonegro
                 hoyonegro = !hoyonegro;
                 jugarigi = Jugador.GetComponent<Rigidbody>();
+                break;
+            case 11:
+                Direccion = (Jugador.transform.position - this.transform.position).normalized;
+                Direccion = new Vector3(Direccion.x + Random.Range(-0.1f, 0.1f), Direccion.y + Random.Range(-0.1f, 0.1f), Direccion.z + Random.Range(-0.1f, 0.1f));
+                mirigi.AddForce(Direccion * fuerzaini * 0.25f, ForceMode.Impulse);
                 break;
             default:
                 break;
@@ -176,19 +182,19 @@ public class scr_Items : MonoBehaviour {
                 case 7:
                     {
                         PlayerScript.Add_Happiness(inc_dec_Valor);
-                        ComunScript.Play_Audio();
+                        //ComunScript.Play_Audio();
                         Destroy(this.gameObject);
                     }break;
                 case 9:
                     {
                         PlayerScript.Add_Food(inc_dec_Valor);
-                        ComunScript.Play_Audio();
+                        //ComunScript.Play_Audio();
                         Destroy(this.gameObject);
                     }break;
                 case 10:
                     {
                         PlayerScript.St_Health = 100;
-                        ComunScript.Play_Audio();
+                        //ComunScript.Play_Audio();
                         Destroy(this.gameObject);
                     }
                     break;
