@@ -16,6 +16,7 @@ public class scr_Button : MonoBehaviour {
 
     public void Action()
     {
+        Menu.ButtonSound();
         switch(IdButton)
         {
             case 0: //Start Game

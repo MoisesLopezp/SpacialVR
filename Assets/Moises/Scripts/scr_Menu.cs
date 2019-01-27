@@ -13,6 +13,8 @@ public class scr_Menu : MonoBehaviour {
     public static int Op_Leng = 1;
     public static bool Op_360 = false;
 
+    AudioSource Btn_Snd;
+
     [HideInInspector]
     public bool HardMode = false;
 
@@ -41,8 +43,9 @@ public class scr_Menu : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+        Btn_Snd = GetComponent<AudioSource>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -99,6 +102,11 @@ public class scr_Menu : MonoBehaviour {
         InitialMenu.SetActive(true);
         Credits.SetActive(false);
         OptionsMenu.SetActive(false);
+    }
+
+    public void ButtonSound()
+    {
+        Btn_Snd.Play();
     }
 
     public void ExitGame()
