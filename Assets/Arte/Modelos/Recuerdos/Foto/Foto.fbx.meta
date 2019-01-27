@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: cf75a3f110dbc224ba74543ac17b5648
-timeCreated: 1548535223
+guid: 5766c5fa8ea8b11498d72fac2d8e2b5b
+timeCreated: 1548572373
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -11,7 +11,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Foto.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: bf4401f98da8c8844b2411976d01f61e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

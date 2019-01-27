@@ -5,11 +5,15 @@
     <string name="txt_game_info_01">Days</string>
     <string name="txt_game_info_02">Hours</string>
     <string name="txt_game_info_03">Signal</string>
+    <string name="txt_game_info_04">Game Over</string>
+    <string name="txt_game_info_05">Victory!</string>
   </English>
   <Spanish>
     <string name="None">-</string>
     <string name="txt_game_info_01">Dias</string>
     <string name="txt_game_info_02">Horas</string>
     <string name="txt_game_info_03">Señal</string>
+    <string name="txt_game_info_04">Fin del Juego</string>
+    <string name="txt_game_info_05">¡Victoria!</string>
   </Spanish>
 </languages>

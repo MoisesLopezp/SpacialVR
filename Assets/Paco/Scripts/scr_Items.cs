@@ -201,6 +201,7 @@ public class scr_Items : MonoBehaviour {
                 case 11:
                     {
                         ComunScript.RecibiDanio = false;
+                        ComunScript.Play_Audio();
                         Destroy(this.gameObject);
                     }
                     break;

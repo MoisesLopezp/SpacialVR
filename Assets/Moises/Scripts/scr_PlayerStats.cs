@@ -8,6 +8,8 @@ public class scr_PlayerStats : MonoBehaviour {
     public CapsuleCollider MyCollider;
     public AudioClip[] audioClips;
 
+    Rigidbody RB;
+
     public float St_Air = 100f;
     public float St_Happiness = 100f;
     public float St_Food = 100f;
@@ -96,7 +98,14 @@ public class scr_PlayerStats : MonoBehaviour {
 
     public void Add_Mass()
     {
+        Vector3 ts = transform.localScale;
+        if (ts.x>2f)
+        {
+            return;
+        }
 
+        RB.drag += 0.2f;
+        transform.localScale = new Vector3(ts.x + 0.1f, ts.x + 0.1f, ts.x + 0.1f);
     }
 
     public void Die()
@@ -111,7 +120,9 @@ public class scr_PlayerStats : MonoBehaviour {
     void Start () {
         StartCoroutine(DelayCollider());
         audioSource = GetComponent<AudioSource>();
-	}
+        RB = GetComponent<Rigidbody>();
+
+    }
 	
     IEnumerator DelayCollider()
     {
