@@ -19,8 +19,8 @@
     <string name="txt_menu_08">Traking</string>
     <string name="txt_menu_09">Restart</string>
     <string name="txt_menu_10">Controlls
-    A: Up
-    B: Down
+    A: Down
+    B: Up
     PalancRight Stick: Move
     Bottom Trigger: Grab/Release Object
     Upper Trigger: Select
@@ -47,8 +47,8 @@
     <string name="txt_menu_09">Reiniciar</string>
     <string name="txt_menu_10">
       Controles
-      A: Subir
-      B: Bajar
+      A: Bajar
+      B: Subir
       Palanca: Moverse
       Gatillo inferior: Tomar/Soltar objeto
       Gatillo superior: Seleccionar

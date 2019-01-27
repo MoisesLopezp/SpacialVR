@@ -12,6 +12,7 @@ TagManager:
   - Button
   - Hand
   - Restart
+  - Valvula
   layers:
   - Default
   - TransparentFX

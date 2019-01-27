@@ -21,6 +21,7 @@ public class scr_Menu : MonoBehaviour {
     public GameObject InitialMenu;
     public GameObject Credits;
     public GameObject OptionsMenu;
+    public GameObject Earth;
 
     public Dropdown DD_Lang;
     public Toggle TG_r360;
@@ -55,6 +56,8 @@ public class scr_Menu : MonoBehaviour {
     public void StartGame(bool _HardMode)
     {
         InitialMenu.SetActive(false);
+        Earth.transform.position = new Vector3(-245,-200,300);
+        Earth.transform.localScale = new Vector3(1, 1, 1);
         scr_Mng.GM.StartGame();
         InGame = true;
         HardMode = _HardMode;

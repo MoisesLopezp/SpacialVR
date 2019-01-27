@@ -217,6 +217,12 @@ public class scr_Items : MonoBehaviour {
                         Destroy(this.gameObject);
                     }
                     break;
+                case 6:
+                    {
+                        PlayerScript.Add_Air(inc_dec_Valor);
+                        Destroy(this.gameObject);
+                    }
+                    break;
 
                 default:
                     break;

@@ -91,7 +91,7 @@ public class scr_TouchCtr : MonoBehaviour {
             AnimatorHand.SetBool("Grab",true);
             if (PosibleObjectGrab && !ObjectGrab)
             {
-                if(PosibleObjectGrab.gameObject.name == "G_Mango")
+                if(PosibleObjectGrab.gameObject.CompareTag("Valvula"))
                 {
                     ItemScript = PosibleObjectGrab.GetComponent<scr_Items>();
                     ItemScript.isGrabByHand = true;
@@ -133,12 +133,12 @@ public class scr_TouchCtr : MonoBehaviour {
             ObjectGrab.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
         
-        if (OVRInput.GetDown(OVRInput.Button.One))
+        if (OVRInput.GetDown(OVRInput.Button.Two))
         {
             PlayerRB.AddForce(Player.transform.up*8f);
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.Two))
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
             PlayerRB.AddForce(Player.transform.up*-8f);
         }

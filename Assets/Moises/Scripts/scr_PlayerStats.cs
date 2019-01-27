@@ -23,7 +23,7 @@ public class scr_PlayerStats : MonoBehaviour {
         Grunt2
     }
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     public bool IsDeath = false;
 
@@ -133,8 +133,9 @@ public class scr_PlayerStats : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
         StartCoroutine(DelayCollider());
-        audioSource = GetComponent<AudioSource>();
+        
         //RB = GetComponent<Rigidbody>();
 
     }
