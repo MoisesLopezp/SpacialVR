@@ -16,6 +16,8 @@
     <string name="txt_menu_06">Language</string>
     <string name="txt_menu_07">360 Traking</string>
     <string name="txt_menu_08">Traking</string>
+    <string name="txt_menu_09">Restart</string>
+    <string name="txt_menu_10">Controlls</string>
     
   </English>
   <Spanish>
@@ -34,6 +36,8 @@
     <string name="txt_menu_06">Lenguaje</string>
     <string name="txt_menu_07">Sensores 360</string>
     <string name="txt_menu_08">Controles</string>
+    <string name="txt_menu_09">Reiniciar</string>
+    <string name="txt_menu_10">Controles</string>
 
   </Spanish>
 </languages>
