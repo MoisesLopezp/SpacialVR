@@ -9,6 +9,7 @@ public class scr_Valvula : MonoBehaviour {
     public scr_Items ItemsScript;
     public GameObject ParentOrigin;
     scr_PlayerStats PlayerScript;
+    Rigidbody Padre;
     float PosIni = 0.12f;
 
     private void Start()
@@ -23,6 +24,8 @@ public class scr_Valvula : MonoBehaviour {
             {
                 isAttach = true;
                 ItemsScript.MiniGame_BombaAire();
+                Padre = transform.GetComponentInParent<Rigidbody>();
+                Padre.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
                 //PosIni += transform.parent.position.y;
             }
         }
