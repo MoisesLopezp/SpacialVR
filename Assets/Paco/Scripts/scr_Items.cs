@@ -30,16 +30,19 @@ public class scr_Items : MonoBehaviour {
     public bool detonante = false; // para que explote y haga daño se necesita cambiar el bool a true
     bool multiplicador = false;
     bool hoyonegro = false;
+    public bool isGrabByHand = false;
 
     //GameObject ui_Image;
     public GameObject prefab_Canvas;
+   
 
     RaycastHit hit;    
-    GameObject player, Canvas;
+    GameObject player, Canvas, posAttach;
     Transform Jugador;
     Vector3 miPosCentro;
     Rigidbody mirigi, jugarigi;
     scr_PlayerStats PlayerScript;
+
     Comunicadores ComunScript;
 
     // Use this for initialization
@@ -52,10 +55,11 @@ public class scr_Items : MonoBehaviour {
            
         }
         */
+        
         mirigi = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
-
-        ComunScript = scr_Mng.GM.Comunicador;
+        posAttach = GameObject.FindGameObjectWithTag("Hand");
+        //ComunScript = scr_Mng.GM.Comunicador;
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         PlayerScript = scr_Mng.GM.Astronaut;
         Vector3 Direccion = Vector3.zero;
@@ -95,17 +99,25 @@ public class scr_Items : MonoBehaviour {
         {
             Dinamita();
         }
+
+        /*if(tipoObj == 6 && isAttach)
+        {
+            MiniGame_BombaAire();
+        }*/
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+       
+
         if (tipoObj == 4)
         {
             detonante = true;
         }
-
+        
         if (collision.gameObject.tag == "Player" )
         {
+            
             switch (tipoObj)
             {
                 case 1:
@@ -127,6 +139,8 @@ public class scr_Items : MonoBehaviour {
                     Destroy(expl, 3f);
                     Destroy(gameObject);
                     break;
+                
+                    
                 default:
                     break;
             }
@@ -160,7 +174,8 @@ public class scr_Items : MonoBehaviour {
                     }
                     ComunScript.RecibiDanio = true;
                     PlayerScript.Add_Dmg(1f * Time.deltaTime);
-                    break;                
+                    break;
+                
                 default:
                     break;
             }
@@ -170,15 +185,13 @@ public class scr_Items : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other)
-    {
+    {         
+
         if (other.gameObject.tag == "Player")
         {
             switch (tipoObj)
             {
-                case 6:
-                    {
-                        MiniGame_BombaAire();   
-                    }break;
+              
                 case 7:
                     {
                         PlayerScript.Add_Happiness(inc_dec_Valor);
@@ -243,9 +256,27 @@ public class scr_Items : MonoBehaviour {
         }
     }
     
-    void MiniGame_BombaAire()
+    public void MiniGame_BombaAire()
     {
-        PlayerScript.Add_Air(inc_dec_Valor);
+        float maxPosY = 0.15f, minPosY = -0.03f;
+        //transform.position = posAttach;
+        // Debug.Log(posAttach.transform.position.y + " " + transform.GetChild(1).localPosition.y);
+        //transform.GetChild(1).position = new Vector3(transform.GetChild(1).position.x, posAttach.transform.position.y , transform.GetChild(1).position.z);
+        transform.GetChild(1).SetParent(posAttach.gameObject.transform);
+
+
+      /* if(transform.GetChild(1).localPosition.y >= maxPosY)
+        {
+            transform.GetChild(1).localPosition = new Vector3(transform.GetChild(1).localPosition.x,maxPosY, transform.GetChild(1).localPosition.z);
+            //PlayerScript.Add_Air(inc_dec_Valor);
+        }
+
+        if (transform.GetChild(1).localPosition.y <= minPosY)
+        {
+            transform.GetChild(1).position = new Vector3(transform.GetChild(1).localPosition.x, minPosY,  transform.GetChild(1).localPosition.z);
+        }*/
+
+
     }
 
 }
