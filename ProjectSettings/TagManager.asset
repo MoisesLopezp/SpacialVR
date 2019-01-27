@@ -10,6 +10,7 @@ TagManager:
   - Explo
   - UI_Image
   - Button
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Cinematic
+  - Items
+  - Player
   - 
   - 
   - 

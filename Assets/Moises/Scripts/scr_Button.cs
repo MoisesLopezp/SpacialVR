@@ -37,6 +37,11 @@ public class scr_Button : MonoBehaviour {
                     Menu.ExitGame();
                 }
                 break;
+            case 4: //Back Menu
+                {
+                    Menu.BackMenu();
+                }
+                break;
         }
     }
 }

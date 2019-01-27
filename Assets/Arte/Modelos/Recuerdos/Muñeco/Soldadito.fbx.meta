@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6772a5284293ce04fa74836c03d5f78b
-timeCreated: 1548535223
+guid: 4d4f9ad194225ca4bab9ce75475af74f
+timeCreated: 1548572382
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,8 +10,13 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Libro
-  externalObjects: {}
+    4300000: nenuco
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 5db45309b26cc7b428e2c5bf4d70becf, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

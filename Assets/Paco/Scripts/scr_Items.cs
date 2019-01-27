@@ -128,7 +128,6 @@ public class scr_Items : MonoBehaviour {
                 case 2:
                     PlayerScript.Add_Dmg(inc_dec_Valor);
                     ComunScript.RecibiDanio = true;
-                    Destroy(this.gameObject);
                     break;
                
                 case 4:
@@ -214,6 +213,7 @@ public class scr_Items : MonoBehaviour {
                 case 11:
                     {
                         ComunScript.RecibiDanio = false;
+                        ComunScript.Play_Audio();
                         Destroy(this.gameObject);
                     }
                     break;

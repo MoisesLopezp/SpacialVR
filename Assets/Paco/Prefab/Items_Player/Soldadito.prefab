@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54861869169565344}
   - component: {fileID: 65657243397867406}
   - component: {fileID: 135577754047715506}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Soldadito
   m_TagString: CanGrab
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e49a47ac040337c4cbb93994e0e0396f, type: 3}
+  - {fileID: 2100000, guid: 5db45309b26cc7b428e2c5bf4d70becf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882854191462882}
-  m_Mesh: {fileID: 4300000, guid: e49a47ac040337c4cbb93994e0e0396f, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 4d4f9ad194225ca4bab9ce75475af74f, type: 3}
 --- !u!54 &54861869169565344
 Rigidbody:
   m_ObjectHideFlags: 1

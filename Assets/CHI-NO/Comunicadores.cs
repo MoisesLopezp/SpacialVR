@@ -21,7 +21,7 @@ public class Comunicadores : MonoBehaviour {
     {
         source_Player = GetComponent<AudioSource>();
         Random_List();
-        PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_PlayerStats>();
+        PlayerScript = FindObjectOfType<scr_PlayerStats>();
     }
 
     public void Play_Audio()
@@ -76,7 +76,10 @@ public class Comunicadores : MonoBehaviour {
         PlayerScript.Add_ProbWin(1.0f);
         yield return new WaitForSeconds(1);
         if (!RecibiDanio && repertition < 5)
+        {
+            repertition++;
             StartCoroutine(PropWin());
+        }
         else
         {
             RecibiDanio = false;

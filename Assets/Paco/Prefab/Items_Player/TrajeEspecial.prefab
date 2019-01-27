@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 54683842093443890}
   - component: {fileID: 65620091635392488}
   - component: {fileID: 65906886375237262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TrajeEspecial
   m_TagString: CanGrab
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4813004108044552}
   - component: {fileID: 33126815624990828}
   - component: {fileID: 23600329232805304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: G_Personaje
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4066558379825518}
   - component: {fileID: 33660297634854446}
   - component: {fileID: 23860625880058692}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: G_Mochila
   m_TagString: Untagged
   m_Icon: {fileID: 0}

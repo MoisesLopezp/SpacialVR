@@ -83,24 +83,24 @@ public class scr_Mng : MonoBehaviour {
 
     public void UpdateUIStats()
     {
-        Txt_st_air.text = "A %" + Astronaut.St_Air.ToString();
-        Txt_st_food.text = "C %" + Astronaut.St_Food.ToString();
-        Txt_st_health.text = "V %" + Astronaut.St_Health.ToString();
-        Txt_st_Happiness.text = "F %" + Astronaut.St_Happiness.ToString();
+        Txt_st_air.text = "%" + ((int)Astronaut.St_Air).ToString();
+        Txt_st_food.text = "%" + ((int)Astronaut.St_Food).ToString();
+        Txt_st_health.text = "%" + ((int)Astronaut.St_Health).ToString();
+        Txt_st_Happiness.text = "%" + ((int)Astronaut.St_Happiness).ToString();
     }
 
     public void UpdateGeneralStats()
     {
         Txt_Days.text = text_days+":"+TimePast.Days.ToString();
         Txt_Time.text = text_hours + ":" + TimePast.Hours.ToString();
-        Txt_ProvWin.text = text_signal + ":" + ProbWin.ToString();
+        Txt_ProvWin.text = text_signal + ": %" + ProbWin.ToString();
     }
 
     public void Add_ProbWin(float _plus)
     {
         ProbWin += _plus;
         if (ProbWin > 100f) { ProbWin = 100f; }
-        Txt_ProvWin.text = ProbWin.ToString();
+        UpdateGeneralStats();
     }
 
     public void GoGameOver()
@@ -128,8 +128,7 @@ public class scr_Mng : MonoBehaviour {
             //Debug.Log("TikTime");
             yield return Delay1s;
             TimePast = TimePast.Add(TperSec);
-            Txt_Days.text = TimePast.Days.ToString();
-            Txt_Time.text = TimePast.Hours.ToString();
+            UpdateGeneralStats();
             if (CurrentDay!=TimePast.Days)
             {
                 CurrentDay = TimePast.Days;

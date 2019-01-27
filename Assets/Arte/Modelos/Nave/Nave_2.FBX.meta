@@ -1,17 +1,20 @@
 fileFormatVersion: 2
-guid: cf75a3f110dbc224ba74543ac17b5648
-timeCreated: 1548535223
-licenseType: Free
+guid: 2a43d0d1acee46549a70c46db8ac6f33
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: MTA_Nave
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Foto.001
-  externalObjects: {}
+    4300000: G_Nave
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MTA_Nave
+    second: {fileID: 2100000, guid: 918490573dfc9464b9f43b7097a36b7a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -30,6 +33,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -61,6 +65,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

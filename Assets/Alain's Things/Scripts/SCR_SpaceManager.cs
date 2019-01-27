@@ -11,7 +11,8 @@ public class SCR_SpaceManager : MonoBehaviour
         Escombros,
         Radiacion,
         Radio,
-        HoyoNegro
+        HoyoNegro,
+        Bomba
     }
 
     private SCR_HazardSpawner hzrd_Spawn;
@@ -27,6 +28,7 @@ public class SCR_SpaceManager : MonoBehaviour
         StartCoroutine(SpawnRadiacion());
         StartCoroutine(SpawnHoyoNegro());
         StartCoroutine(SpawnRadio());
+        StartCoroutine(SpawnBomba());
     }
 
     private IEnumerator SpawnAsteroid()
@@ -72,5 +74,14 @@ public class SCR_SpaceManager : MonoBehaviour
 
         hzrd_Spawn.SpawnObject(HAZARDS.Radio, Mathf.Infinity);
         StartCoroutine(SpawnRadio());
+    }
+
+    private IEnumerator SpawnBomba()
+    {
+        float coolDown = Random.Range(30.0f, 60.0f);
+        yield return new WaitForSeconds(coolDown);
+
+        hzrd_Spawn.SpawnObject(HAZARDS.Bomba, Mathf.Infinity);
+        StartCoroutine(SpawnBomba());
     }
 }

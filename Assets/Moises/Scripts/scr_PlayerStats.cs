@@ -8,6 +8,8 @@ public class scr_PlayerStats : MonoBehaviour {
     public CapsuleCollider MyCollider;
     public AudioClip[] audioClips;
 
+    Rigidbody RB;
+
     public float St_Air = 100f;
     public float St_Happiness = 100f;
     public float St_Food = 100f;
@@ -62,14 +64,18 @@ public class scr_PlayerStats : MonoBehaviour {
     public void Add_Food(float _plus)
     {
         St_Food += _plus;
-        if (St_Food > 200f) { St_Food = 200f; }
-        if (St_Food > 100f) { Add_Mass(); }
+        if (St_Food > 200f) { St_Food = 200f; /*RB.isKinematic = true; */}
+        //if (St_Food > 100f) { Add_Mass(); RB.isKinematic = false; }
         scr_Mng.GM.UpdateUIStats();
     }
 
     public void Rest_Food(float _val)
     {
         St_Food -= _val;
+        if (St_Food <= 100)
+        {
+            transform.localScale = Vector3.one * 0.1f;
+        }
         if (St_Food <= 0f)
         {
             St_Food = 0f;
@@ -96,7 +102,19 @@ public class scr_PlayerStats : MonoBehaviour {
 
     public void Add_Mass()
     {
+        //RB.drag += St_Food - 100 * 0.01f;
+        transform.localScale = Vector3.one * ((100 - St_Food) * 0.001f);
 
+        /*
+        Vector3 ts = transform.localScale;
+        if (ts.x>2f)
+        {
+            return;
+        }
+
+        RB.drag += 0.2f;
+        transform.localScale = new Vector3(ts.x + 0.1f, ts.x + 0.1f, ts.x + 0.1f);
+        */
     }
 
     public void Die()
@@ -111,7 +129,9 @@ public class scr_PlayerStats : MonoBehaviour {
     void Start () {
         StartCoroutine(DelayCollider());
         audioSource = GetComponent<AudioSource>();
-	}
+        //RB = GetComponent<Rigidbody>();
+
+    }
 	
     IEnumerator DelayCollider()
     {

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54887297192189594}
   - component: {fileID: 65204115454498098}
   - component: {fileID: 135757696658340104}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Libro
   m_TagString: CanGrab
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6772a5284293ce04fa74836c03d5f78b, type: 3}
+  - {fileID: 2100000, guid: c0af1d18619b6e94f93c259c3dfffb28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1655806678455228}
-  m_Mesh: {fileID: 4300000, guid: 6772a5284293ce04fa74836c03d5f78b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d5c5780bc17f0e145873b08960f483de, type: 3}
 --- !u!54 &54887297192189594
 Rigidbody:
   m_ObjectHideFlags: 1

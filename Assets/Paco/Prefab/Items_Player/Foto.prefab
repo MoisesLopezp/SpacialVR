@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54834821058030172}
   - component: {fileID: 65214952348056308}
   - component: {fileID: 135695195521620668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Foto
   m_TagString: CanGrab
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cf75a3f110dbc224ba74543ac17b5648, type: 3}
+  - {fileID: 2100000, guid: bf4401f98da8c8844b2411976d01f61e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349477530108254}
-  m_Mesh: {fileID: 4300000, guid: cf75a3f110dbc224ba74543ac17b5648, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 5766c5fa8ea8b11498d72fac2d8e2b5b, type: 3}
 --- !u!54 &54834821058030172
 Rigidbody:
   m_ObjectHideFlags: 1
