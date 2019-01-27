@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114233999062965664}
   - component: {fileID: 54093380060089650}
   - component: {fileID: 65746189090194528}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BombaDeAire
   m_TagString: CanGrab
   m_Icon: {fileID: 0}

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54793750738190976}
   - component: {fileID: 65868724142938356}
   - component: {fileID: 135494953133376620}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Comida_Pizza
   m_TagString: CanGrab
   m_Icon: {fileID: 0}

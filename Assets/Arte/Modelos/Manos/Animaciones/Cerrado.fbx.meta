@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: 0a979ee6c659f364e9f34415db8581f0
+timeCreated: 1548578085
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Controladores_L
+    100004: Controladores_R
+    100006: G_Hand_Index_1_L
+    100008: G_Hand_Index_1_R
+    100010: G_Hand_Index_2_L
+    100012: G_Hand_Index_2_R
+    100014: G_Hand_Index_3_L
+    100016: G_Hand_Index_3_R
+    100018: G_Hand_Middle_1_L
+    100020: G_Hand_Middle_1_R
+    100022: G_Hand_Middle_2_L
+    100024: G_Hand_Middle_2_R
+    100026: G_Hand_Middle_3_L
+    100028: G_Hand_Middle_3_R
+    100030: G_Hand_Pinky_1_L
+    100032: G_Hand_Pinky_1_R
+    100034: G_Hand_Pinky_2_L
+    100036: G_Hand_Pinky_2_R
+    100038: G_Hand_Pinky_3_L
+    100040: G_Hand_Pinky_3_R
+    100042: G_Hand_Ring_1_L
+    100044: G_Hand_Ring_1_R
+    100046: G_Hand_Ring_2_L
+    100048: G_Hand_Ring_2_R
+    100050: G_Hand_Ring_3_L
+    100052: G_Hand_Ring_3_R
+    100054: G_Hand_Thumb_1_L
+    100056: G_Hand_Thumb_1_R
+    100058: G_Hand_Thumb_2_L
+    100060: G_Hand_Thumb_2_R
+    100062: G_Palm_L
+    100064: G_Palm_R
+    100066: G_Root_L
+    100068: G_Root_R
+    100070: GEO_L
+    100072: GEO_R
+    100074: Hand_Base_L
+    100076: Hand_Base_R
+    100078: Hand_Hand_Middle_1_L
+    100080: Hand_Hand_Middle_1_L 1
+    100082: Hand_Hand_Middle_1_L 2
+    100084: Hand_Hand_Middle_1_R
+    100086: Hand_Hand_Middle_1_R 1
+    100088: Hand_Hand_Middle_1_R 2
+    100090: Hand_Hand_Pinky_1_L
+    100092: Hand_Hand_Pinky_1_L 1
+    100094: Hand_Hand_Pinky_1_R
+    100096: Hand_Hand_Pinky_1_R 1
+    100098: Hand_Hand_Ring_1_L
+    100100: Hand_Hand_Ring_1_L 1
+    100102: Hand_Hand_Ring_1_L 2
+    100104: Hand_Hand_Ring_1_R
+    100106: Hand_Hand_Ring_1_R 1
+    100108: Hand_Hand_Ring_1_R 2
+    100110: Hand_Hand_Thumb_1_L
+    100112: Hand_Hand_Thumb_1_L 1
+    100114: Hand_Hand_Thumb_1_R
+    100116: Hand_Hand_Thumb_1_R 1
+    100118: Hand_Index_1_L
+    100120: Hand_Index_1_L 1
+    100122: Hand_Index_1_L 2
+    100124: Hand_Index_1_R
+    100126: Hand_Index_1_R 1
+    100128: Hand_Index_1_R 2
+    100130: Hand_Pinky_Middle_1_L
+    100132: Hand_Pinky_Middle_1_R
+    100134: Joints_L
+    100136: Joints_R
+    100138: L_Hand
+    100140: L_Hand_Fingers
+    100142: L_Hand_Index_1
+    100144: L_Hand_Index_2
+    100146: L_Hand_Index_3
+    100148: L_Hand_Index_4
+    100150: L_Hand_Middle_1
+    100152: L_Hand_Middle_2
+    100154: L_Hand_Middle_3
+    100156: L_Hand_Middle_4
+    100158: L_Hand_Palm
+    100160: L_Hand_Pinky_1
+    100162: L_Hand_Pinky_2
+    100164: L_Hand_Pinky_3
+    100166: L_Hand_Pinky_4
+    100168: L_Hand_Ring_1
+    100170: L_Hand_Ring_2
+    100172: L_Hand_Ring_3
+    100174: L_Hand_Ring_4
+    100176: L_Hand_Thumb_1
+    100178: L_Hand_Thumb_2
+    100180: L_Hand_Thumb_3
+    100182: Mano_L
+    100184: Mano_R
+    100186: Palm_L
+    100188: Palm_R
+    100190: R_Hand
+    100192: R_Hand_Fingers
+    100194: R_Hand_Index_1
+    100196: R_Hand_Index_2
+    100198: R_Hand_Index_3
+    100200: R_Hand_Index_4
+    100202: R_Hand_Middle_1
+    100204: R_Hand_Middle_2
+    100206: R_Hand_Middle_3
+    100208: R_Hand_Middle_4
+    100210: R_Hand_Palm
+    100212: R_Hand_Pinky_1
+    100214: R_Hand_Pinky_2
+    100216: R_Hand_Pinky_3
+    100218: R_Hand_Pinky_4
+    100220: R_Hand_Ring_1
+    100222: R_Hand_Ring_2
+    100224: R_Hand_Ring_3
+    100226: R_Hand_Ring_4
+    100228: R_Hand_Thumb_1
+    100230: R_Hand_Thumb_2
+    100232: R_Hand_Thumb_3
+    100234: Root_L
+    100236: Root_R
+    400000: //RootNode
+    400002: Controladores_L
+    400004: Controladores_R
+    400006: G_Hand_Index_1_L
+    400008: G_Hand_Index_1_R
+    400010: G_Hand_Index_2_L
+    400012: G_Hand_Index_2_R
+    400014: G_Hand_Index_3_L
+    400016: G_Hand_Index_3_R
+    400018: G_Hand_Middle_1_L
+    400020: G_Hand_Middle_1_R
+    400022: G_Hand_Middle_2_L
+    400024: G_Hand_Middle_2_R
+    400026: G_Hand_Middle_3_L
+    400028: G_Hand_Middle_3_R
+    400030: G_Hand_Pinky_1_L
+    400032: G_Hand_Pinky_1_R
+    400034: G_Hand_Pinky_2_L
+    400036: G_Hand_Pinky_2_R
+    400038: G_Hand_Pinky_3_L
+    400040: G_Hand_Pinky_3_R
+    400042: G_Hand_Ring_1_L
+    400044: G_Hand_Ring_1_R
+    400046: G_Hand_Ring_2_L
+    400048: G_Hand_Ring_2_R
+    400050: G_Hand_Ring_3_L
+    400052: G_Hand_Ring_3_R
+    400054: G_Hand_Thumb_1_L
+    400056: G_Hand_Thumb_1_R
+    400058: G_Hand_Thumb_2_L
+    400060: G_Hand_Thumb_2_R
+    400062: G_Palm_L
+    400064: G_Palm_R
+    400066: G_Root_L
+    400068: G_Root_R
+    400070: GEO_L
+    400072: GEO_R
+    400074: Hand_Base_L
+    400076: Hand_Base_R
+    400078: Hand_Hand_Middle_1_L
+    400080: Hand_Hand_Middle_1_L 1
+    400082: Hand_Hand_Middle_1_L 2
+    400084: Hand_Hand_Middle_1_R
+    400086: Hand_Hand_Middle_1_R 1
+    400088: Hand_Hand_Middle_1_R 2
+    400090: Hand_Hand_Pinky_1_L
+    400092: Hand_Hand_Pinky_1_L 1
+    400094: Hand_Hand_Pinky_1_R
+    400096: Hand_Hand_Pinky_1_R 1
+    400098: Hand_Hand_Ring_1_L
+    400100: Hand_Hand_Ring_1_L 1
+    400102: Hand_Hand_Ring_1_L 2
+    400104: Hand_Hand_Ring_1_R
+    400106: Hand_Hand_Ring_1_R 1
+    400108: Hand_Hand_Ring_1_R 2
+    400110: Hand_Hand_Thumb_1_L
+    400112: Hand_Hand_Thumb_1_L 1
+    400114: Hand_Hand_Thumb_1_R
+    400116: Hand_Hand_Thumb_1_R 1
+    400118: Hand_Index_1_L
+    400120: Hand_Index_1_L 1
+    400122: Hand_Index_1_L 2
+    400124: Hand_Index_1_R
+    400126: Hand_Index_1_R 1
+    400128: Hand_Index_1_R 2
+    400130: Hand_Pinky_Middle_1_L
+    400132: Hand_Pinky_Middle_1_R
+    400134: Joints_L
+    400136: Joints_R
+    400138: L_Hand
+    400140: L_Hand_Fingers
+    400142: L_Hand_Index_1
+    400144: L_Hand_Index_2
+    400146: L_Hand_Index_3
+    400148: L_Hand_Index_4
+    400150: L_Hand_Middle_1
+    400152: L_Hand_Middle_2
+    400154: L_Hand_Middle_3
+    400156: L_Hand_Middle_4
+    400158: L_Hand_Palm
+    400160: L_Hand_Pinky_1
+    400162: L_Hand_Pinky_2
+    400164: L_Hand_Pinky_3
+    400166: L_Hand_Pinky_4
+    400168: L_Hand_Ring_1
+    400170: L_Hand_Ring_2
+    400172: L_Hand_Ring_3
+    400174: L_Hand_Ring_4
+    400176: L_Hand_Thumb_1
+    400178: L_Hand_Thumb_2
+    400180: L_Hand_Thumb_3
+    400182: Mano_L
+    400184: Mano_R
+    400186: Palm_L
+    400188: Palm_R
+    400190: R_Hand
+    400192: R_Hand_Fingers
+    400194: R_Hand_Index_1
+    400196: R_Hand_Index_2
+    400198: R_Hand_Index_3
+    400200: R_Hand_Index_4
+    400202: R_Hand_Middle_1
+    400204: R_Hand_Middle_2
+    400206: R_Hand_Middle_3
+    400208: R_Hand_Middle_4
+    400210: R_Hand_Palm
+    400212: R_Hand_Pinky_1
+    400214: R_Hand_Pinky_2
+    400216: R_Hand_Pinky_3
+    400218: R_Hand_Pinky_4
+    400220: R_Hand_Ring_1
+    400222: R_Hand_Ring_2
+    400224: R_Hand_Ring_3
+    400226: R_Hand_Ring_4
+    400228: R_Hand_Thumb_1
+    400230: R_Hand_Thumb_2
+    400232: R_Hand_Thumb_3
+    400234: Root_L
+    400236: Root_R
+    2100000: lambert2
+    2100002: blinn1
+    4300000: Hand_Base_L
+    4300002: Hand_Base_R
+    7400000: Cerrado
+    9500000: //RootNode
+    13700000: Hand_Base_L
+    13700002: Hand_Base_R
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
