@@ -27,10 +27,7 @@ public class scr_Valvula : MonoBehaviour {
                 ItemsScript.MiniGame_BombaAire();
                 PosIniX = transform.parent.position.x;
                 posIniZ = transform.parent.position.z;
-                PosIniY = transform.parent.position.y;
-                //Padre = transform.GetComponentInParent<Rigidbody>();
-                // Padre.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-                //PosIni += transform.parent.position.y;
+                PosIniY = transform.parent.position.y;             
             }
         }
     }
