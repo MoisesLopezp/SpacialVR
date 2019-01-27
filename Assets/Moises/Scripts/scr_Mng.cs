@@ -32,6 +32,9 @@ public class scr_Mng : MonoBehaviour {
     public Text Txt_st_health;
     public Text Txt_st_Happiness;
 
+    public GameObject CV_LH;
+    public GameObject CV_RH;
+
     int TicsAir = 2;
     int TicsHappiness = 3;
     int TicsFood = 4;
@@ -42,6 +45,10 @@ public class scr_Mng : MonoBehaviour {
 
     public Comunicadores Comunicador;
 
+    string text_days;
+    string text_hours;
+    string text_signal;
+
     private void Awake()
     {
         GM = this;
@@ -49,11 +56,13 @@ public class scr_Mng : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Txt_Days.text = TimePast.Days.ToString();
-        Txt_Time.text = TimePast.Hours.ToString();
-        Txt_ProvWin.text = ProbWin.ToString();
-
         StartCoroutine(CTime());
+
+        text_days = scr_Lang.GetText("txt_game_info_01");
+        text_hours = scr_Lang.GetText("txt_game_info_02");
+        text_signal = scr_Lang.GetText("txt_game_info_03");
+
+        UpdateGeneralStats();
     }
 
 	// Update is called once per frame
@@ -69,6 +78,13 @@ public class scr_Mng : MonoBehaviour {
         Txt_st_Happiness.text = "F %" + Astronaut.St_Happiness.ToString();
     }
 
+    public void UpdateGeneralStats()
+    {
+        Txt_Days.text = text_days+":"+TimePast.Days.ToString();
+        Txt_Time.text = text_hours + ":" + TimePast.Hours.ToString();
+        Txt_ProvWin.text = text_signal + ":" + ProbWin.ToString();
+    }
+
     public void Add_ProbWin(float _plus)
     {
         ProbWin += _plus;
@@ -78,6 +94,9 @@ public class scr_Mng : MonoBehaviour {
 
     public void GoGameOver()
     {
+        CV_LH.SetActive(false);
+        CV_RH.SetActive(false);
+        scr_Menu.InGame = false;
         GameOver = true;
         GameOverScreen.SetActive(true);
     }

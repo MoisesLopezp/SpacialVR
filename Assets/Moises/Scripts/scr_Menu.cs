@@ -19,6 +19,8 @@ public class scr_Menu : MonoBehaviour {
     public Dropdown DD_Lang;
     public Toggle TG_r360;
 
+    public static bool InGame = false;
+
     private void Awake()
     {
         MyData = new scr_Config();
@@ -45,6 +47,9 @@ public class scr_Menu : MonoBehaviour {
 
     public void StartGame(bool _HardMode)
     {
+        scr_Mng.GM.CV_LH.SetActive(true);
+        scr_Mng.GM.CV_RH.SetActive(true);
+        InGame = true;
         HardMode = _HardMode;
     }
 
