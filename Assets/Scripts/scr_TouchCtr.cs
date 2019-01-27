@@ -60,6 +60,12 @@ public class scr_TouchCtr : MonoBehaviour {
         transform.rotation = OVRInput.GetLocalControllerRotation(MyController);
             //Quaternion.Euler(HandQ.eulerAngles.x, HandQ.eulerAngles.y, HandQ.eulerAngles.z);
 
+        if (IsRight)
+        {
+            Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+            Debug.DrawRay(transform.position, forward, Color.cyan);
+        }
+
         if (OVRInput.Get(GrabButton)>0.5)
         {
             AnimatorHand.SetBool("Grab",true);
