@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33958282558714420}
   - component: {fileID: 23953663704881284}
   - component: {fileID: 54805231532371238}
-  - component: {fileID: 65949025727671152}
+  - component: {fileID: 114269125626756542}
+  - component: {fileID: 135036174390056994}
   m_Layer: 0
   m_Name: G_Bomba
   m_TagString: Untagged
@@ -99,8 +100,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65949025727671152
-BoxCollider:
+--- !u!114 &114269125626756542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813630852994864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9fcea8f496f7824daff993620ff9cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuerzaini: 0
+  inc_dec_Valor: 20
+  tipoObj: 4
+  detonante: 0
+  prefab_Canvas: {fileID: 0}
+--- !u!135 &135036174390056994
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -109,5 +126,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.11449814, y: 0.11626445, z: 0.29304892}
+  m_Radius: 0.14652446
   m_Center: {x: 0.00093078613, y: 0, z: 0.14620498}

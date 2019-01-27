@@ -305,7 +305,7 @@ Prefab:
     - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
         type: 2}
       propertyPath: v_Items.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4700501705057392, guid: 7b96d355bd0df7e48ac7190f58e8340d, type: 2}
       propertyPath: m_LocalPosition.x
@@ -383,7 +383,7 @@ Prefab:
     - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
         type: 2}
       propertyPath: v_Items.Array.data[1].v_Cuantos
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
         type: 2}
@@ -393,7 +393,7 @@ Prefab:
     - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
         type: 2}
       propertyPath: v_Items.Array.data[3].v_Cuantos
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
         type: 2}
@@ -467,7 +467,7 @@ Prefab:
     - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
         type: 2}
       propertyPath: v_Items.Array.data[10].v_Cuantos
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
         type: 2}
@@ -478,7 +478,29 @@ Prefab:
     - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
         type: 2}
       propertyPath: v_Items.Array.data[11].v_Cuantos
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
+        type: 2}
+      propertyPath: v_Items.Array.data[12].v_Modelo
+      value: 
+      objectReference: {fileID: 1139384341798650, guid: 9acaa227dfcbaff43aa5cad5bb5032d8,
+        type: 2}
+    - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
+        type: 2}
+      propertyPath: v_Items.Array.data[12].v_Cuantos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
+        type: 2}
+      propertyPath: v_Items.Array.data[13].v_Modelo
+      value: 
+      objectReference: {fileID: 1139384341798650, guid: 9acaa227dfcbaff43aa5cad5bb5032d8,
+        type: 2}
+    - target: {fileID: 114452459879478390, guid: 7b96d355bd0df7e48ac7190f58e8340d,
+        type: 2}
+      propertyPath: v_Items.Array.data[13].v_Cuantos
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b96d355bd0df7e48ac7190f58e8340d, type: 2}

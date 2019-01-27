@@ -57,7 +57,7 @@ public class scr_Items : MonoBehaviour {
 
         ComunScript = scr_Mng.GM.Comunicador;
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_PlayerStats>();
+        PlayerScript = scr_Mng.GM.Astronaut;
         
         switch (tipoObj)
         {
@@ -117,6 +117,7 @@ public class scr_Items : MonoBehaviour {
                     inc_dec_Valor -= magnitud;                   
                     PlayerScript.Add_Dmg(inc_dec_Valor);
                     ComunScript.RecibiDanio = true;
+                    Destroy(gameObject);
                     break;
                 default:
                     break;
@@ -136,16 +137,21 @@ public class scr_Items : MonoBehaviour {
             switch (tipoObj)
             {
                 case 3:
-                    PlayerScript.Add_Dmg(inc_dec_Valor);
+                    PlayerScript.Add_Dmg(inc_dec_Valor*Time.deltaTime);
                     ComunScript.RecibiDanio = true;
                     break;
                 case 5:
                     Vector3 nuevadireccion = (this.transform.position - Jugador.transform.position).normalized;
                     float distance = Vector3.Distance(this.transform.position, Jugador.transform.position);
                     if (distance < 0.2f) { distance = 0.2f; }
-                    float force = fuerzaini / (distance * distance);
+                    float force = (fuerzaini*0.1f) / (distance * distance);
                     jugarigi.AddForce(nuevadireccion * force);
+                    if (jugarigi.velocity.sqrMagnitude > 1.5f)
+                    {
+                        jugarigi.velocity *= 0.99f;
+                    }
                     ComunScript.RecibiDanio = true;
+                    PlayerScript.Add_Dmg(1f * Time.deltaTime);
                     break;                
                 default:
                     break;
@@ -208,7 +214,7 @@ public class scr_Items : MonoBehaviour {
             Rigidbody rb = objetos.GetComponent<Rigidbody>();
             if(rb != null && detonante == true)
             {
-                rb.AddExplosionForce(50f, transform.position, 5f);
+                rb.AddExplosionForce(2f, transform.position, 0.5f);
                 if (multiplicador == false)
                 {
                     this.GetComponent<SphereCollider>().radius *= 12f;
