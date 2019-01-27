@@ -40,6 +40,7 @@ public class scr_Mng : MonoBehaviour {
 
     public GameObject GameOverScreen;
     public GameObject SuccesScreen;
+    public GameObject TutorialScreen;
     public GameObject Explosion;
 
     public Comunicadores Comunicador;
@@ -76,10 +77,10 @@ public class scr_Mng : MonoBehaviour {
         UpdateGeneralStats();
     }
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void RestartGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
 
     public void UpdateUIStats()
     {

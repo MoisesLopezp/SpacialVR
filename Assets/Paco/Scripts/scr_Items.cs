@@ -59,7 +59,7 @@ public class scr_Items : MonoBehaviour {
         mirigi = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         posAttach = GameObject.FindGameObjectWithTag("Hand");
-        //ComunScript = scr_Mng.GM.Comunicador;
+        ComunScript = scr_Mng.GM.Comunicador;
         Jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         PlayerScript = scr_Mng.GM.Astronaut;
         Vector3 Direccion = Vector3.zero;

@@ -167,6 +167,10 @@ public class scr_TouchCtr : MonoBehaviour {
         {
             PosibleObjectGrab = other.gameObject;
         }
+        if (other.CompareTag("Restart"))
+        {
+            scr_Mng.GM.RestartGame();
+        }
     }
 
     private void OnTriggerExit(Collider other)

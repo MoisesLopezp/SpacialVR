@@ -27,10 +27,13 @@ public class scr_ship : MonoBehaviour {
         Explo.SetActive(true);
         Destroy(Explo, 3f);
         yield return new WaitForSeconds(1f);
+        scr_Mng.GM.TutorialScreen.SetActive(true);
         Init.transform.parent = null;
         Init.SetActive(true);
         Destroy(Meteoro.gameObject, 10f);
         Destroy(gameObject,10f);
+        yield return new WaitForSeconds(6f);
+        scr_Mng.GM.TutorialScreen.SetActive(false);
     }
 
 }
