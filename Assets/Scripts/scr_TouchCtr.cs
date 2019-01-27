@@ -10,6 +10,8 @@ public class scr_TouchCtr : MonoBehaviour {
     public GameObject Camera;
     public GameObject PointGrab;
 
+    public AudioSource AS_Grab;
+
     [HideInInspector]
     public LineRenderer Selector;
 
@@ -70,7 +72,7 @@ public class scr_TouchCtr : MonoBehaviour {
             Selector.SetPosition(1, transform.forward * 10);
             if (OVRInput.Get(AcctionButton) > 0.5)
             {
-                Debug.Log("Click");
+                //Debug.Log("Click");
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, transform.forward, out hit, 15f, UILayer))
                 {
@@ -89,6 +91,7 @@ public class scr_TouchCtr : MonoBehaviour {
             AnimatorHand.SetBool("Grab",true);
             if (PosibleObjectGrab && !ObjectGrab)
             {
+                AS_Grab.Play();
                 ObjectGrab = PosibleObjectGrab;
                 ObjectGrab.transform.position = Hand.transform.position;
                 ObjectGrab.transform.rotation = Hand.transform.rotation;

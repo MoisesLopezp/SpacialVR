@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114686618671080300}
   - component: {fileID: 54028115187597490}
   - component: {fileID: 65933964758637020}
+  - component: {fileID: 82656234808054154}
+  - component: {fileID: 114398969855389652}
   m_Layer: 0
   m_Name: G_EscombroCaja
   m_TagString: CanGrab
@@ -112,6 +114,97 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17016041, y: 0.18706821, z: 0.22857887}
   m_Center: {x: 0.0000000037252903, y: 0.093289725, z: 0.0000000037252903}
+--- !u!82 &82656234808054154
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872842015524760}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 32113eb26bdfe0849aa62f74c33d0d93, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 50
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &114398969855389652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872842015524760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 428221da14bac5e42ae34d1174d1502e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114686618671080300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,4 +220,5 @@ MonoBehaviour:
   inc_dec_Valor: 0
   tipoObj: 2
   detonante: 0
+  isGrabByHand: 0
   prefab_Canvas: {fileID: 0}

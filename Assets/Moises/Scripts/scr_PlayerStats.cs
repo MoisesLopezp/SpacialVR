@@ -7,6 +7,8 @@ public class scr_PlayerStats : MonoBehaviour {
 
     public CapsuleCollider MyCollider;
     public AudioClip[] audioClips;
+    public Animator MyAnimator;
+    public AudioSource Respiracion;
 
     Rigidbody RB;
 
@@ -71,6 +73,7 @@ public class scr_PlayerStats : MonoBehaviour {
 
     public void Rest_Food(float _val)
     {
+        PlayAudio(2);
         St_Food -= _val;
         if (St_Food <= 100)
         {
@@ -121,6 +124,9 @@ public class scr_PlayerStats : MonoBehaviour {
     {
         if (IsDeath)
             return;
+
+        Respiracion.Stop();
+        MyAnimator.speed = 0;
         IsDeath = true;
         scr_Mng.GM.GoGameOver();
     }
