@@ -8,9 +8,10 @@ public class scr_Valvula : MonoBehaviour {
     public float inc_dec_Valor = 0;
     public scr_Items ItemsScript;
     public GameObject ParentOrigin;
+    bool recorrido = false;
     scr_PlayerStats PlayerScript;
     Rigidbody Padre;
-    float PosIni = 0.12f;
+    float PosIniX, posIniZ, PosIniY;
 
     private void Start()
     {
@@ -24,8 +25,11 @@ public class scr_Valvula : MonoBehaviour {
             {
                 isAttach = true;
                 ItemsScript.MiniGame_BombaAire();
-                Padre = transform.GetComponentInParent<Rigidbody>();
-                Padre.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+                PosIniX = transform.parent.position.x;
+                posIniZ = transform.parent.position.z;
+                PosIniY = transform.parent.position.y;
+                //Padre = transform.GetComponentInParent<Rigidbody>();
+                // Padre.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
                 //PosIni += transform.parent.position.y;
             }
         }
@@ -43,7 +47,28 @@ public class scr_Valvula : MonoBehaviour {
     {
         if (isAttach)
         {
-            StartCoroutine(Oxigeno());
+            if(transform.parent.position.x != PosIniX || transform.parent.position.z != posIniZ)
+            {
+                transform.parent.position = new Vector3(PosIniX, transform.parent.position.y, posIniZ);
+
+               
+            }
+
+            if (transform.parent.position.y <= PosIniY )
+            {
+                transform.parent.position = new Vector3(transform.parent.position.x, PosIniY, transform.parent.position.z);
+                recorrido = true;
+            }
+            if (transform.parent.position.y >= (PosIniY + 0.12f))
+            {
+                if (recorrido == true)
+                {
+                    PlayerScript.Add_Air(inc_dec_Valor);
+                    recorrido = false;
+                }
+                transform.parent.position = new Vector3(transform.parent.position.x, PosIniY + 0.12f, transform.parent.position.z);
+            }
+            
             //ItemsScript.MiniGame_BombaAire();
             
         }
@@ -51,10 +76,8 @@ public class scr_Valvula : MonoBehaviour {
         {
             transform.SetParent(ParentOrigin.gameObject.transform);
         }
+
+
     }
 
-    IEnumerator Oxigeno() {
-           yield return new WaitForSeconds(1f);
-             PlayerScript.Add_Air(inc_dec_Valor);
-    }
 }

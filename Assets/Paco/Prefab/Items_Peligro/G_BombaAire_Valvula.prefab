@@ -258,7 +258,7 @@ MonoBehaviour:
   inc_dec_Valor: 10
   tipoObj: 6
   detonante: 0
-  isGrabByHand: 1
+  isGrabByHand: 0
   prefab_Canvas: {fileID: 0}
 --- !u!114 &114910922674376708
 MonoBehaviour:

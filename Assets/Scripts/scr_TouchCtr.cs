@@ -9,7 +9,7 @@ public class scr_TouchCtr : MonoBehaviour {
     public GameObject Player;
     public GameObject Camera;
     public GameObject PointGrab;
-
+    scr_Valvula ValvulaScript;
     public AudioSource AS_Grab;
 
     [HideInInspector]
@@ -91,6 +91,12 @@ public class scr_TouchCtr : MonoBehaviour {
             AnimatorHand.SetBool("Grab",true);
             if (PosibleObjectGrab && !ObjectGrab)
             {
+                if(PosibleObjectGrab.gameObject.name == "G_Mango")
+                {
+                    ValvulaScript = PosibleObjectGrab.GetComponent<scr_Valvula>();
+                    ValvulaScript.isAttach = true;
+                }
+
                 AS_Grab.Play();
                 ObjectGrab = PosibleObjectGrab;
                 ObjectGrab.transform.position = Hand.transform.position;
@@ -107,6 +113,8 @@ public class scr_TouchCtr : MonoBehaviour {
             AnimatorHand.SetBool("Grab", false);
             if (ObjectGrab)
             {
+                if (ValvulaScript != null)
+                    ValvulaScript.isAttach = false;
                 ObjectGrab.GetComponent<Rigidbody>().useGravity = true;
                 ObjectGrab.GetComponent<Rigidbody>().velocity = OVRInput.GetLocalControllerVelocity(MyController);
                 ObjectGrab.transform.parent = null;
