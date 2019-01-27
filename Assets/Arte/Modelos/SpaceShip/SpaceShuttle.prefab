@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3303276}
   - component: {fileID: 2357552}
   m_Layer: 0
-  m_Name: SpaceShuttle_01
+  m_Name: SpaceShuttle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
