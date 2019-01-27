@@ -7,6 +7,16 @@
     <string name="txt_game_info_03">Signal</string>
     <string name="txt_game_info_04">Game Over</string>
     <string name="txt_game_info_05">Victory!</string>
+  
+    <string name="txt_menu_01">Play</string>
+    <string name="txt_menu_02">Options</string>
+    <string name="txt_menu_03">Credits</string>
+    <string name="txt_menu_04">Exit</string>
+    <string name="txt_menu_05">Back</string>
+    <string name="txt_menu_06">Language</string>
+    <string name="txt_menu_07">360 Traking</string>
+    <string name="txt_menu_08">Traking</string>
+    
   </English>
   <Spanish>
     <string name="None">-</string>
@@ -15,5 +25,15 @@
     <string name="txt_game_info_03">Señal</string>
     <string name="txt_game_info_04">Fin del Juego</string>
     <string name="txt_game_info_05">¡Victoria!</string>
+  
+    <string name="txt_menu_01">Jugar</string>
+    <string name="txt_menu_02">Opciones</string>
+    <string name="txt_menu_03">Creditos</string>
+    <string name="txt_menu_04">Salir</string>
+    <string name="txt_menu_05">Atras</string>
+    <string name="txt_menu_06">Lenguaje</string>
+    <string name="txt_menu_07">Sensores 360</string>
+    <string name="txt_menu_08">Controles</string>
+
   </Spanish>
 </languages>

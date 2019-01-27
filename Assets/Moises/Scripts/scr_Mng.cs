@@ -83,10 +83,10 @@ public class scr_Mng : MonoBehaviour {
 
     public void UpdateUIStats()
     {
-        Txt_st_air.text = "A %" + ((int)Astronaut.St_Air).ToString();
-        Txt_st_food.text = "C %" + ((int)Astronaut.St_Food).ToString();
-        Txt_st_health.text = "V %" + ((int)Astronaut.St_Health).ToString();
-        Txt_st_Happiness.text = "F %" + ((int)Astronaut.St_Happiness).ToString();
+        Txt_st_air.text = "%" + ((int)Astronaut.St_Air).ToString();
+        Txt_st_food.text = "%" + ((int)Astronaut.St_Food).ToString();
+        Txt_st_health.text = "%" + ((int)Astronaut.St_Health).ToString();
+        Txt_st_Happiness.text = "%" + ((int)Astronaut.St_Happiness).ToString();
     }
 
     public void UpdateGeneralStats()

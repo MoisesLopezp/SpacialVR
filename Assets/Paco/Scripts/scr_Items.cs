@@ -116,7 +116,6 @@ public class scr_Items : MonoBehaviour {
                 case 2:
                     PlayerScript.Add_Dmg(inc_dec_Valor);
                     ComunScript.RecibiDanio = true;
-                    Destroy(this.gameObject);
                     break;
                
                 case 4:

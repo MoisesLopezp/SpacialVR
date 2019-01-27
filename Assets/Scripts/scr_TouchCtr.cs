@@ -70,9 +70,11 @@ public class scr_TouchCtr : MonoBehaviour {
             Selector.SetPosition(1, transform.forward * 10);
             if (OVRInput.Get(AcctionButton) > 0.5)
             {
+                Debug.Log("Click");
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, transform.forward, out hit, 15f, UILayer))
                 {
+                    Debug.Log(hit.transform.gameObject.name);
                     if (hit.transform.CompareTag("Button"))
                     {
                         hit.transform.gameObject.SendMessage("Action");

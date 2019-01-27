@@ -12,7 +12,7 @@ public class scr_ship : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         RB = GetComponent<Rigidbody>();
-        RB.AddForce(transform.forward * 200f);
+        RB.AddForce(transform.up * -200f);
         Meteoro.AddForce(Meteoro.transform.up*-150f);
         StartCoroutine(TimeCrash());
     }

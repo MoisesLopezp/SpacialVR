@@ -17,6 +17,8 @@ public class scr_Menu : MonoBehaviour {
     public bool HardMode = false;
 
     public GameObject InitialMenu;
+    public GameObject Credits;
+    public GameObject OptionsMenu;
 
     public Dropdown DD_Lang;
     public Toggle TG_r360;
@@ -82,17 +84,21 @@ public class scr_Menu : MonoBehaviour {
 
     public void ShowCredits()
     {
-
+        InitialMenu.SetActive(false);
+        Credits.SetActive(true);
     }
 
     public void ShowOptions()
     {
-
+        InitialMenu.SetActive(false);
+        OptionsMenu.SetActive(true);
     }
 
     public void BackMenu()
     {
-
+        InitialMenu.SetActive(true);
+        Credits.SetActive(false);
+        OptionsMenu.SetActive(false);
     }
 
     public void ExitGame()
