@@ -65,14 +65,16 @@ public class scr_Menu : MonoBehaviour {
 
     public void ChangeLang()
     {
-        Op_Leng = DD_Lang.value;
+        if (Op_Leng == 1) { Op_Leng = 0; } else { Op_Leng = 1; }
+        DD_Lang.value = Op_Leng;
         scr_Lang.setLanguage();
         SaveDataPlayer();
     }
 
     public void ChangeRotOps()
     {
-        Op_360 = TG_r360.isOn;
+        Op_360 = !Op_360;
+        TG_r360.isOn= Op_360;
         SaveDataPlayer();
     }
 

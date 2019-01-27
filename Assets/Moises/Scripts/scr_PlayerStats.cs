@@ -65,15 +65,15 @@ public class scr_PlayerStats : MonoBehaviour {
 
     public void Add_Food(float _plus)
     {
+        PlayAudio(2);
         St_Food += _plus;
-        if (St_Food > 200f) { St_Food = 200f; /*RB.isKinematic = true; */}
+        if (St_Food > 100f) { St_Food = 100f; /*RB.isKinematic = true; */}
         //if (St_Food > 100f) { Add_Mass(); RB.isKinematic = false; }
         scr_Mng.GM.UpdateUIStats();
     }
 
     public void Rest_Food(float _val)
     {
-        PlayAudio(2);
         St_Food -= _val;
         if (St_Food <= 100)
         {

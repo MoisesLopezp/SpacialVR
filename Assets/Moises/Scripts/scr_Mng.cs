@@ -41,6 +41,7 @@ public class scr_Mng : MonoBehaviour {
     public GameObject GameOverScreen;
     public GameObject SuccesScreen;
     public GameObject TutorialScreen;
+    public GameObject RestartScreen;
     public GameObject Explosion;
 
     public Comunicadores Comunicador;
@@ -111,6 +112,7 @@ public class scr_Mng : MonoBehaviour {
         scr_Menu.InGame = false;
         GameOver = true;
         GameOverScreen.SetActive(true);
+        StartCoroutine(RestartDelay());
     }
 
     void CheckWin()
@@ -119,7 +121,14 @@ public class scr_Mng : MonoBehaviour {
         {
             GameOver = true;
             SuccesScreen.SetActive(true);
+            StartCoroutine( RestartDelay());
         }
+    }
+
+    IEnumerator RestartDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        RestartScreen.SetActive(true);
     }
 
     IEnumerator CTime()

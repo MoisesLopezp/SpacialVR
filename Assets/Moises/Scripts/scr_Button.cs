@@ -43,6 +43,16 @@ public class scr_Button : MonoBehaviour {
                     Menu.BackMenu();
                 }
                 break;
+            case 5: //Change Lang
+                {
+                    Menu.ChangeLang();
+                }
+                break;
+            case 6: //Chang Traking
+                {
+                    Menu.ChangeRotOps();
+                }
+                break;
         }
     }
 }
