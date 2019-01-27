@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 65316216261829732}
   m_Layer: 0
   m_Name: G_EscombroTuvo
-  m_TagString: Untagged
+  m_TagString: CanGrab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

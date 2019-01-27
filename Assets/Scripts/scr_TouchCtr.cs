@@ -24,11 +24,14 @@ public class scr_TouchCtr : MonoBehaviour {
 
     Rigidbody PlayerRB;
 
-	// Use this for initialization
-	void Start () {
+    Rigidbody RB;
+
+    // Use this for initialization
+    void Start () {
         ObjectGrab = null;
         PosibleObjectGrab = null;
         PlayerRB = Player.GetComponent<Rigidbody>();
+        RB = GetComponent<Rigidbody>();
 
         Hand = AnimatorHand.gameObject;
         if (MyController == OVRInput.Controller.RTouch)
@@ -46,12 +49,14 @@ public class scr_TouchCtr : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
         if (!OVRInput.GetControllerPositionTracked(MyController))
             Debug.Log("No traking");
         
         Quaternion HandQ = OVRInput.GetLocalControllerRotation(MyController);
 
-        transform.localPosition = OVRInput.GetLocalControllerPosition(MyController)+new Vector3(0f,0.0f,0f);
+        transform.localPosition = OVRInput.GetLocalControllerPosition(MyController);
+        //transform.position = Vector3.MoveTowards(transform.position, OVRInput.GetLocalControllerPosition(MyController), 0.03f);
         transform.rotation = OVRInput.GetLocalControllerRotation(MyController);
             //Quaternion.Euler(HandQ.eulerAngles.x, HandQ.eulerAngles.y, HandQ.eulerAngles.z);
 

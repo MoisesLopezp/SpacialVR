@@ -6,11 +6,14 @@ using UnityEngine;
 public class scr_PlayerStats : MonoBehaviour {
 
     public CapsuleCollider MyCollider;
+    public AudioClip[] audioClips;
 
     public float St_Air = 100f;
     public float St_Happiness = 100f;
     public float St_Food = 100f;
     public float St_Health = 100f;
+
+    private AudioSource audioSource;
 
     public bool IsDeath = false;
 
@@ -101,6 +104,7 @@ public class scr_PlayerStats : MonoBehaviour {
     // Use this for initialization
     void Start () {
         StartCoroutine(DelayCollider());
+        audioSource = GetComponent<AudioSource>();
 	}
 	
     IEnumerator DelayCollider()
@@ -113,4 +117,15 @@ public class scr_PlayerStats : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void PlayAudio(int audioIndex)
+    {
+        audioSource.clip = audioClips[audioIndex];
+        audioSource.Play();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }
