@@ -9,6 +9,7 @@ TagManager:
   - Dmg
   - Explo
   - UI_Image
+  - Button
   layers:
   - Default
   - TransparentFX

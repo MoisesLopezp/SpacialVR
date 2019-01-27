@@ -28,6 +28,8 @@ public class scr_TouchCtr : MonoBehaviour {
 
     Rigidbody RB;
 
+    public LayerMask UILayer;
+
     // Use this for initialization
     void Start () {
         ObjectGrab = null;
@@ -67,6 +69,16 @@ public class scr_TouchCtr : MonoBehaviour {
         {
             Selector.SetPosition(0, transform.position);
             Selector.SetPosition(1, transform.forward * 10);
+            if (OVRInput.Get(AcctionButton) > 0.5)
+            {
+                RaycastHit hit;
+                Physics.Raycast(transform.position, transform.forward, out hit, 15f, UILayer);
+                if (hit.transform.CompareTag("Button"))
+                {
+                    Debug.Log("HitButton");
+                }
+            }
+                
         }
 
         if (OVRInput.Get(GrabButton)>0.5)

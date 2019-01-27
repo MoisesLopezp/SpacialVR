@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2139651859}
-  m_IndirectSpecularColor: {r: 0.23236749, g: 0.23554096, b: 0.2723016, a: 1}
+  m_IndirectSpecularColor: {r: 0.23236784, g: 0.23553982, b: 0.27230316, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 99198214}
   m_Layer: 5
   m_Name: Creditos_Boton
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,9 +525,10 @@ GameObject:
   - component: {fileID: 359075970}
   - component: {fileID: 359075969}
   - component: {fileID: 359075968}
+  - component: {fileID: 359075972}
   m_Layer: 5
   m_Name: Play button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -647,6 +648,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 359075966}
+--- !u!65 &359075972
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 359075966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 238.85, y: 106.59, z: 1}
+  m_Center: {x: 0, y: 11.87, z: 0}
 --- !u!1 &435765862 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1670249716501024, guid: 5b945b9b4cbc30b44abc36219c8742b3,
@@ -1147,7 +1160,7 @@ GameObject:
   - component: {fileID: 840195050}
   m_Layer: 5
   m_Name: Opciones_Boton
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1585,7 +1598,7 @@ GameObject:
   - component: {fileID: 1147589803}
   m_Layer: 5
   m_Name: Salir_Boton
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5533,6 +5546,16 @@ Prefab:
     - target: {fileID: 4327608819843428, guid: 5b945b9b4cbc30b44abc36219c8742b3, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114684096086349138, guid: 5b945b9b4cbc30b44abc36219c8742b3,
+        type: 2}
+      propertyPath: UILayer.m_Bits
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 114429928056904922, guid: 5b945b9b4cbc30b44abc36219c8742b3,
+        type: 2}
+      propertyPath: UILayer.m_Bits
+      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b945b9b4cbc30b44abc36219c8742b3, type: 2}
