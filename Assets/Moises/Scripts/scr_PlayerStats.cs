@@ -13,6 +13,12 @@ public class scr_PlayerStats : MonoBehaviour {
     public float St_Food = 100f;
     public float St_Health = 100f;
 
+    private enum AudioClips
+    {
+        Grunt1,
+        Grunt2
+    }
+
     private AudioSource audioSource;
 
     public bool IsDeath = false;

@@ -31,7 +31,7 @@ public class SCR_SpaceManager : MonoBehaviour
 
     private IEnumerator SpawnAsteroid()
     {
-        float coolDown = Random.Range(4.0f, 8.0f);
+        float coolDown = Random.Range(2.0f, 4.0f);
         yield return new WaitForSeconds(coolDown);
 
         hzrd_Spawn.SpawnObject(HAZARDS.Asteroides, 15.0f);
@@ -44,7 +44,6 @@ public class SCR_SpaceManager : MonoBehaviour
         yield return new WaitForSeconds(coolDown);
 
         hzrd_Spawn.SpawnObject(HAZARDS.Escombros, 15.0f);
-        SpawnEscombro();
         StartCoroutine(SpawnEscombro());
     }
 
@@ -54,7 +53,6 @@ public class SCR_SpaceManager : MonoBehaviour
         yield return new WaitForSeconds(coolDown);
 
         hzrd_Spawn.SpawnObject(HAZARDS.Radiacion, Random.Range(10.0f, 15.0f));
-        SpawnRadiacion();
         StartCoroutine(SpawnRadiacion());
     }
 
@@ -64,7 +62,6 @@ public class SCR_SpaceManager : MonoBehaviour
         yield return new WaitForSeconds(coolDown);
 
         hzrd_Spawn.SpawnObject(HAZARDS.HoyoNegro, Random.Range(20.0f, 30.0f));
-        SpawnHoyoNegro();
         StartCoroutine(SpawnHoyoNegro());
     }
 
@@ -73,8 +70,7 @@ public class SCR_SpaceManager : MonoBehaviour
         float coolDown = 15.0f;
         yield return new WaitForSeconds(coolDown);
 
-        hzrd_Spawn.SpawnObject(HAZARDS.HoyoNegro, Mathf.Infinity);
-        SpawnHoyoNegro();
-        StartCoroutine(SpawnHoyoNegro());
+        hzrd_Spawn.SpawnObject(HAZARDS.Radio, Mathf.Infinity);
+        StartCoroutine(SpawnRadio());
     }
 }
