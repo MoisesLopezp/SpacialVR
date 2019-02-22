@@ -1,24 +1,21 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class scr_Mng : MonoBehaviour {
-
-    public static scr_Mng GM;
-
+public class scr_Mng : MonoBehaviour
+{
     public bool GameOver = false;
 
-    int CurrentDay = 0;
+    private int CurrentDay = 0;
 
     [HideInInspector]
-    public System.TimeSpan TimePast = new System.TimeSpan(0,0,0,0,0);
+    public System.TimeSpan TimePast = new System.TimeSpan(0, 0, 0, 0, 0);
 
     public float ProbWin = 0f;
 
-    WaitForSeconds Delay1s = new WaitForSeconds(1f);
+    private WaitForSeconds Delay1s = new WaitForSeconds(1f);
 
-    System.TimeSpan TperSec = new System.TimeSpan(0, 8, 0);
+    private System.TimeSpan TperSec = new System.TimeSpan(0, 8, 0);
 
     public scr_PlayerStats Astronaut;
 
@@ -34,9 +31,9 @@ public class scr_Mng : MonoBehaviour {
     public GameObject CV_LH;
     public GameObject CV_RH;
 
-    int TicsAir = 2;
-    int TicsHappiness = 3;
-    int TicsFood = 4;
+    private int TicsAir = 2;
+    private int TicsHappiness = 3;
+    private int TicsFood = 4;
 
     public GameObject GameOverScreen;
     public GameObject SuccesScreen;
@@ -51,18 +48,13 @@ public class scr_Mng : MonoBehaviour {
     public scr_TouchCtr LH;
     public scr_TouchCtr RH;
 
-    string text_days;
-    string text_hours;
-    string text_signal;
-
-    private void Awake()
-    {
-        GM = this;
-    }
+    private string text_days;
+    private string text_hours;
+    private string text_signal;
 
     // Use this for initialization
-    public void StartGame () {
-
+    public void StartGame()
+    {
         RH.Selector.enabled = false;
 
         StartObject.SetActive(true);
@@ -93,7 +85,7 @@ public class scr_Mng : MonoBehaviour {
 
     public void UpdateGeneralStats()
     {
-        Txt_Days.text = text_days+":"+TimePast.Days.ToString();
+        Txt_Days.text = text_days + ":" + TimePast.Days.ToString();
         Txt_Time.text = text_hours + ":" + TimePast.Hours.ToString();
         Txt_ProvWin.text = text_signal + ": %" + ProbWin.ToString();
     }
@@ -115,31 +107,31 @@ public class scr_Mng : MonoBehaviour {
         StartCoroutine(RestartDelay());
     }
 
-    void CheckWin()
+    private void CheckWin()
     {
-        if (Random.Range(5, 101)<=ProbWin)
+        if (Random.Range(5, 101) <= ProbWin)
         {
             GameOver = true;
             SuccesScreen.SetActive(true);
-            StartCoroutine( RestartDelay());
+            StartCoroutine(RestartDelay());
         }
     }
 
-    IEnumerator RestartDelay()
+    private IEnumerator RestartDelay()
     {
         yield return new WaitForSeconds(3f);
         RestartScreen.SetActive(true);
     }
 
-    IEnumerator CTime()
+    private IEnumerator CTime()
     {
-        while(!GameOver)
+        while (!GameOver)
         {
             //Debug.Log("TikTime");
             yield return Delay1s;
             TimePast = TimePast.Add(TperSec);
             UpdateGeneralStats();
-            if (CurrentDay!=TimePast.Days)
+            if (CurrentDay != TimePast.Days)
             {
                 CurrentDay = TimePast.Days;
                 CheckWin();
@@ -147,7 +139,7 @@ public class scr_Mng : MonoBehaviour {
             TicsAir--;
             TicsHappiness--;
             TicsFood--;
-            if (TicsAir<=0)
+            if (TicsAir <= 0)
             {
                 TicsAir = 2;
                 Astronaut.Rest_Air(1);
