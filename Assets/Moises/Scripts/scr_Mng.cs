@@ -13,7 +13,7 @@ public class scr_Mng : MonoBehaviour
 
     public float ProbWin = 0f;
 
-    private WaitForSeconds Delay1s = new WaitForSeconds(1f);
+    private readonly WaitForSeconds Delay1s = new WaitForSeconds(1f);
 
     private System.TimeSpan TperSec = new System.TimeSpan(0, 8, 0);
 
@@ -45,17 +45,20 @@ public class scr_Mng : MonoBehaviour
 
     public GameObject StartObject;
 
-    public scr_TouchCtr LH;
-    public scr_TouchCtr RH;
+    public static scr_Mng GM;
 
     private string text_days;
     private string text_hours;
     private string text_signal;
 
+    private void Start()
+    {
+        GM = this;
+    }
+
     // Use this for initialization
     public void StartGame()
     {
-        RH.Selector.enabled = false;
 
         StartObject.SetActive(true);
         CV_LH.SetActive(true);

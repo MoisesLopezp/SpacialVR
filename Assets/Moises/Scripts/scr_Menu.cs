@@ -1,19 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using SaveGameFree;
 using UnityEngine;
-using SaveGameFree;
-
 using UnityEngine.UI;
 
-public class scr_Menu : MonoBehaviour {
-
+public class scr_Menu : MonoBehaviour
+{
     public static scr_Config MyData;
     public static string fileName = "PlayerData";
 
     public static int Op_Leng = 1;
     public static bool Op_360 = false;
 
-    AudioSource Btn_Snd;
+    private AudioSource Btn_Snd;
 
     [HideInInspector]
     public bool HardMode = false;
@@ -43,20 +40,20 @@ public class scr_Menu : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    private void Start()
+    {
         Btn_Snd = GetComponent<AudioSource>();
-
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    private void Update()
+    {
+    }
 
     public void StartGame(bool _HardMode)
     {
         InitialMenu.SetActive(false);
-        Earth.transform.position = new Vector3(-245,-200,300);
+        Earth.transform.position = new Vector3(-245, -200, 300);
         Earth.transform.localScale = new Vector3(1, 1, 1);
         scr_Mng.GM.StartGame();
         InGame = true;
@@ -74,7 +71,7 @@ public class scr_Menu : MonoBehaviour {
     public void ChangeRotOps()
     {
         Op_360 = !Op_360;
-        TG_r360.isOn= Op_360;
+        TG_r360.isOn = Op_360;
         SaveDataPlayer();
     }
 
@@ -87,7 +84,6 @@ public class scr_Menu : MonoBehaviour {
 
     public void ShowGamesModes()
     {
-
     }
 
     public void ShowCredits()
