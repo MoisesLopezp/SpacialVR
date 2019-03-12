@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.spacialvr.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Alain\\Documents\\GitHub\\Golstats-VR-Team_Master\\SpacialVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "SpacialVR [Testing]"
+        }
+      }
+    }
+  ]
+}
