@@ -2,9 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class SCR_Controller : MonoBehaviour
 {
-    public bool triggerBUttonDown;
-    private EVRButtonId triggerButton = EVRButtonId.k_EButton_SteamVR_Trigger;
+    private Hand hand;
+
+    private void Start()
+    {
+        hand = GetComponent<Hand>();
+    }
+
+    private void Update()
+    {
+        
+    }
 }
